@@ -30,8 +30,8 @@ layout: default
             </div>
             <div class="col-6">
                 <h3>Tried</h3>
-                {% assign scotch_tried_sorted = (site.data.scotch.tried | sort: 'name') %}
-                {% include whiskys.html whiskys=scotch_tried_sorted %}
+                {% assign scotch_tried_sorted = (site.data.irish.tried | sort: 'name') %}
+                {% include whiskys.html whiskys=irish_tried_sorted %}
             </div>
 
             <div class="col-6">
