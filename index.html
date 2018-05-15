@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+        <h1>Whisk(e)y</h1>
+        <div class="row">
+            <div class="col-6">
+                <h2>Scotch - Tried</h2>
+                {% assign scotch_tried_sorted = (site.data.scotch.tried | sort: 'name') %}
+                {% include whiskys.html whiskys=scotch_tried_sorted %}
+            </div>
+
+            <div class="col-6">
+                <h2>Scotch - To Try</h2>
+                {% assign scotch_to_try_sorted = (site.data.scotch.to_try | sort: 'name') %}
+                {% include whiskys.html whiskys=scotch_to_try_sorted %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h2>Irish - Tried</h2>
+                {% assign scotch_tried_sorted = (site.data.scotch.tried | sort: 'name') %}
+                {% include whiskys.html whiskys=scotch_tried_sorted %}
+            </div>
+
+            <div class="col-6">
+                <h2>Irish - To Try</h2>
+                {% assign irish_to_try_sorted = (site.data.irish.to_try | sort: 'name') %}
+                {% include whiskys.html whiskys=irish_to_try_sorted %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h2>Bourbon - Tried</h2>
+                {% assign bourbon_tried_sorted = (site.data.bourbon.tried | sort: 'name') %}
+                {% include whiskys.html whiskys=bourbon_tried_sorted %}
+            </div>
+
+            <div class="col-6">
+                <h2>Bourbon - To Try</h2>
+                {% assign bourbon_to_try_sorted = (site.data.bourbon.to_try | sort: 'name') %}
+                {% include whiskys.html whiskys=bourbon_to_try_sorted %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h2>Japanese - Tried</h2>
+                {% assign japanese_tried_sorted = (site.data.japanese.tried | sort: 'name') %}
+                {% include whiskys.html whiskys=japanese_tried_sorted %}
+            </div>
+
+            <div class="col-6">
+                <h2>Japanese - To Try</h2>
+                {% assign japanese_to_try_sorted = (site.data.japanese.to_try | sort: 'name') %}
+                {% include whiskys.html whiskys=japanese_to_try_sorted %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h2>English - To Try</h2>
+                {% assign english_to_try_sorted = (site.data.english.to_try | sort: 'name') %}
+                {% include whiskys.html whiskys=english_to_try_sorted %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <h2>Welsh - To Try</h2>
+                {% assign welsh_to_try_sorted = (site.data.welsh.to_try | sort: 'name') %}
+                {% include whiskys.html whiskys=welsh_to_try_sorted %}
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

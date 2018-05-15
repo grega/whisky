@@ -1,0 +1,16 @@
+<table class="table table-sm table-borderless table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Rating (out of 3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for whisky in include.whiskys %}
+    <tr>
+        <th scope="row">{{ whisky.name }}</th>
+        <td>{{ whisky.rating | default: "n/a"}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
