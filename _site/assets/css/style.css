@@ -1,2 +1,5 @@
 tbody tr th {
   font-weight: normal; }
+
+.hidden {
+  display: none; }
