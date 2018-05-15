@@ -1,6 +1,6 @@
 <hr>
 <p>Submit a suggestion:</p>
-<form name="{{ include.form_name }}" method="POST" netlify-honeypot="bot-field-8a7d9e" netlify>
+<form name="suggestion_{{ include.name }}" method="POST" netlify-honeypot="bot-field-8a7d9e" netlify>
   <p><label>Whisky Name: <input type="text" name="whisky_name"></label></p>
   <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field-8a7d9e"></label></p>
   <p><button type="submit">Send</button></p>
