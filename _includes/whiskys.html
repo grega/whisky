@@ -1,15 +1,15 @@
-<table class="table table-sm table-borderless table-hover">
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Rating (out of 3)</th>
+      <th scope="col" class="rating">Rating (out of 3)</th>
     </tr>
   </thead>
   <tbody>
     {% for whisky in include.whiskys %}
     <tr>
         <th scope="row">{{ whisky.name }}</th>
-        <td>{{ whisky.rating | default: "n/a"}}</td>
+        <td class="rating">{{ whisky.rating | default: "n/a"}}</td>
     </tr>
     {% endfor %}
   </tbody>

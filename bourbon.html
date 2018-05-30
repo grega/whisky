@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h2 class="title is-2">Bourbon</h2>
+<div class="columns">
+    <div class="column is-6">
+        <h3 class="title is-4">Tried</h3>
+        {% assign bourbon_tried_sorted = (site.data.bourbon.tried | sort: 'name') %}
+        {% include whiskys.html whiskys=bourbon_tried_sorted %}
+    </div>
+
+    <div class="column is-6">
+        <h3 class="title is-4">To Try</h3>
+        {% assign bourbon_to_try_sorted = (site.data.bourbon.to_try | sort: 'name') %}
+        {% include whiskys.html whiskys=bourbon_to_try_sorted %}
+        {% include whisky_suggestion.html name="bourbon" %}
+    </div>
+</div>

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h2 class="title is-2">Welsh<h2>
+<div class="columns">
+    <div class="column is-6">
+        <h3 class="title is-4">Tried</h3>
+    </div>
+    <div class="column is-6">
+        <h3 class="title is-4">To Try</h3>
+        {% assign welsh_to_try_sorted = (site.data.welsh.to_try | sort: 'name') %}
+        {% include whiskys.html whiskys=welsh_to_try_sorted %}
+        {% include whisky_suggestion.html name="welsh" %}
+    </div>
+</div>
+
