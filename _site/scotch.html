@@ -36,184 +36,199 @@
     <div class="column is-6">
         <h3 class="title is-4">Tried</h3>
         
-        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <!-- <input class="search" placeholder="Search" /> -->
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="scotchTried">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col" class="rating">Rating (out of 3)</th>
+      <th scope="col" class="sort" data-sort="name">Name</th>
+      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="list">
     
     <tr>
-        <th scope="row">Aberlour 10</th>
+        <td class="name" scope="row">Aberlour 10</td>
         <td class="rating">3</td>
     </tr>
     
     <tr>
-        <th scope="row">Auchentoshan 12</th>
+        <td class="name" scope="row">Auchentoshan 12</td>
         <td class="rating">2</td>
     </tr>
     
     <tr>
-        <th scope="row">Auchentoshan 12</th>
-        <td class="rating">0</td>
-    </tr>
-    
-    <tr>
-        <th scope="row">Auchentoshan 3 Wood</th>
+        <td class="name" scope="row">Auchentoshan Three Wood</td>
         <td class="rating">3</td>
     </tr>
     
     <tr>
-        <th scope="row">Aultmore 12</th>
+        <td class="name" scope="row">Aultmore 12</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">Balvenie 14 Caribbean Cask</th>
+        <td class="name" scope="row">Balvenie 14 Caribbean Cask</td>
         <td class="rating">1</td>
     </tr>
     
     <tr>
-        <th scope="row">Balvenie Doublewood 12</th>
+        <td class="name" scope="row">Balvenie Doublewood 12</td>
         <td class="rating">1</td>
     </tr>
     
     <tr>
-        <th scope="row">Benromach 10</th>
+        <td class="name" scope="row">Benromach 10</td>
         <td class="rating">1</td>
     </tr>
     
     <tr>
-        <th scope="row">Cardhu Gold Reserve</th>
+        <td class="name" scope="row">Cardhu Gold Reserve</td>
         <td class="rating">1</td>
     </tr>
     
     <tr>
-        <th scope="row">Chivas Regal 18</th>
+        <td class="name" scope="row">Chivas Regal 18</td>
         <td class="rating">2</td>
     </tr>
     
     <tr>
-        <th scope="row">Dalwhinnie 15</th>
+        <td class="name" scope="row">Dalwhinnie 15</td>
         <td class="rating">3</td>
     </tr>
     
     <tr>
-        <th scope="row">Dalwhinnie Winter’s Gold</th>
+        <td class="name" scope="row">Dalwhinnie Winter’s Gold</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">Glenfiddich 15</th>
+        <td class="name" scope="row">Glenfiddich 15</td>
         <td class="rating">2</td>
     </tr>
     
     <tr>
-        <th scope="row">Glenfiddich 18</th>
+        <td class="name" scope="row">Glenfiddich 18</td>
         <td class="rating">1</td>
     </tr>
     
     <tr>
-        <th scope="row">Glenlivet 18</th>
+        <td class="name" scope="row">Glenlivet 18</td>
         <td class="rating">3</td>
     </tr>
     
     <tr>
-        <th scope="row">Glenmorangie Port Wood Finish</th>
+        <td class="name" scope="row">Glenmorangie Port Wood Finish</td>
         <td class="rating">1</td>
     </tr>
     
     <tr>
-        <th scope="row">Kilkerran work in progress</th>
+        <td class="name" scope="row">Kilkerran work in progress</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">Laphroiag 10</th>
+        <td class="name" scope="row">Laphroiag 10</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">MacAllan 10 Sherry Oak</th>
+        <td class="name" scope="row">MacAllan 10 Sherry Oak</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">Talisker 10</th>
+        <td class="name" scope="row">Talisker 10</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">Talisker Skye</th>
+        <td class="name" scope="row">Talisker Skye</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">Talisker Storm</th>
+        <td class="name" scope="row">Talisker Storm</td>
         <td class="rating">0</td>
     </tr>
     
     <tr>
-        <th scope="row">Tomatin Legacy</th>
+        <td class="name" scope="row">Tomatin Legacy</td>
         <td class="rating">1</td>
     </tr>
     
     <tr>
-        <th scope="row">Tomintoul 14</th>
+        <td class="name" scope="row">Tomintoul 14</td>
         <td class="rating">1</td>
     </tr>
     
   </tbody>
 </table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
+<script>
+  var options = {
+    valueNames: [ 'name', 'rating' ]
+  };
+
+  var whiskyList = new List('scotchTried', options);
+</script>
 
     </div>
 
     <div class="column is-6">
         <h3 class="title is-4">To Try</h3>
         
-        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <!-- <input class="search" placeholder="Search" /> -->
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="scotchToTry">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col" class="rating">Rating (out of 3)</th>
+      <th scope="col" class="sort" data-sort="name">Name</th>
+      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="list">
     
     <tr>
-        <th scope="row">Aberlour 12 Double Cask</th>
+        <td class="name" scope="row">Aberlour 12 Double Cask</td>
         <td class="rating">n/a</td>
     </tr>
     
     <tr>
-        <th scope="row">Ardbeg Uigeadail</th>
+        <td class="name" scope="row">Ardbeg Uigeadail</td>
         <td class="rating">n/a</td>
     </tr>
     
     <tr>
-        <th scope="row">Johnnie Walker Black Label 12</th>
+        <td class="name" scope="row">Johnnie Walker Black Label 12</td>
         <td class="rating">n/a</td>
     </tr>
     
     <tr>
-        <th scope="row">Johnnie Walker Green Label 15</th>
+        <td class="name" scope="row">Johnnie Walker Green Label 15</td>
         <td class="rating">n/a</td>
     </tr>
     
     <tr>
-        <th scope="row">Lagavulin 16</th>
+        <td class="name" scope="row">Lagavulin 16</td>
         <td class="rating">n/a</td>
     </tr>
     
     <tr>
-        <th scope="row">Monkey Shoulder</th>
+        <td class="name" scope="row">Monkey Shoulder</td>
         <td class="rating">n/a</td>
     </tr>
     
   </tbody>
 </table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
+<script>
+  var options = {
+    valueNames: [ 'name', 'rating' ]
+  };
+
+  var whiskyList = new List('scotchToTry', options);
+</script>
 
         <hr>
 <form name="suggestion_scotch" method="POST" netlify-honeypot="bot-field-8a7d9e" netlify>
@@ -237,29 +252,17 @@
     </section>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
-
-          // Get all "navbar-burger" elements
           var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-          // Check if there are any navbar burgers
           if ($navbarBurgers.length > 0) {
-
-            // Add a click event on each of them
             $navbarBurgers.forEach(function ($el) {
               $el.addEventListener('click', function () {
-
-                // Get the target from the "data-target" attribute
                 var target = $el.dataset.target;
                 var $target = document.getElementById(target);
-
-                // Toggle the class on both the "navbar-burger" and the "navbar-menu"
                 $el.classList.toggle('is-active');
                 $target.classList.toggle('is-active');
-
               });
             });
           }
-
         });
     </script>
   </body>

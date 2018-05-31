@@ -10,7 +10,7 @@ layout: default
     <div class="column is-6">
         <h3 class="title is-4">To Try</h3>
         {% assign english_to_try_sorted = (site.data.english.to_try | sort: 'name') %}
-        {% include whiskys.html whiskys=english_to_try_sorted %}
+        {% include whiskys.html whiskys=english_to_try_sorted table-id="englishToTry" %}
         {% include whisky_suggestion.html name="english" %}
     </div>
 </div>

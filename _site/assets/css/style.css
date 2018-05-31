@@ -1,7 +1,7 @@
 tbody tr th {
   font-weight: normal; }
 
-th.rating, td.rating {
+th.rating-title, td.rating {
   text-align: center; }
 
 .hidden {

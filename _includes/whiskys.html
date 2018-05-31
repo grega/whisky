@@ -1,16 +1,26 @@
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+<!-- <input class="search" placeholder="Search" /> -->
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.table-id}}">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col" class="rating">Rating (out of 3)</th>
+      <th scope="col" class="sort" data-sort="name">Name</th>
+      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="list">
     {% for whisky in include.whiskys %}
     <tr>
-        <th scope="row">{{ whisky.name }}</th>
+        <td class="name" scope="row">{{ whisky.name }}</td>
         <td class="rating">{{ whisky.rating | default: "n/a"}}</td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
+<script>
+  var options = {
+    valueNames: [ 'name', 'rating' ]
+  };
+
+  var whiskyList = new List('{{include.table-id}}', options);
+</script>
