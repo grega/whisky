@@ -35,12 +35,9 @@
 <div class="columns">
     <div class="column is-6">
         <h3 class="title is-4">Tried</h3>
-    </div>
-    <div class="column is-6">
-        <h3 class="title is-4">To Try</h3>
         
         <!-- <input class="search" placeholder="Search" /> -->
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="englishToTry">
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="englishTried">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name</th>
@@ -51,7 +48,7 @@
     
     <tr>
         <td class="name" scope="row">Cotswolds Single Malt</td>
-        <td class="rating">n/a</td>
+        <td class="rating">1</td>
     </tr>
     
   </tbody>
@@ -63,9 +60,12 @@
     valueNames: [ 'name', 'rating' ]
   };
 
-  var whiskyList = new List('englishToTry', options);
+  var whiskyList = new List('englishTried', options);
 </script>
 
+    </div>
+    <div class="column is-6">
+        <h3 class="title is-4">To Try</h3>
         <hr>
 <form name="suggestion_english" method="POST" netlify-honeypot="bot-field-8a7d9e" netlify>
     <p>Submit a suggestion:</p>
