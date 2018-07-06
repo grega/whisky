@@ -66,9 +66,13 @@
 
 - name: Benromach 10
   rating: 1
-  
+
 - name: Oban 14
   rating: 1
-  
+
 - name: Johnnie Walker Black Label 12
   rating: 2
+
+- name: Lagavulin 16
+  rating: 2
+
