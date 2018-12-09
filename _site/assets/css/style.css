@@ -4,5 +4,8 @@ tbody tr th {
 th.rating-title, td.rating {
   text-align: center; }
 
+th.sort {
+  cursor: pointer; }
+
 .hidden {
   display: none; }

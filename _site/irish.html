@@ -33,67 +33,78 @@
       <div class="container">
         <h2 class="title is-2">Irish</h2>
 <div class="columns">
-    <div class="column is-6">
-        <h3 class="title is-4">Tried</h3>
-        
-        <!-- <input class="search" placeholder="Search" /> -->
+  <div class="column is-6">
+    <h3 class="title is-4">Tried</h3>
+    
+    <!-- <input class="search" placeholder="Search" /> -->
 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="irishTried">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name</th>
       <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
+      <th scope="col" class="owned sort" data-sort="owned">Owned</th>
     </tr>
   </thead>
   <tbody class="list">
     
     <tr>
-        <td class="name" scope="row">Bushmills Black Bush</td>
-        <td class="rating">1</td>
+      <td class="name" scope="row">Bushmills Black Bush</td>
+      <td class="rating">1</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Green Spot</td>
-        <td class="rating">3</td>
+      <td class="name" scope="row">Green Spot</td>
+      <td class="rating">3</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Jameson Irish Whiskey</td>
-        <td class="rating">2</td>
+      <td class="name" scope="row">Jameson Irish Whiskey</td>
+      <td class="rating">2</td>
+      <td class="owned">yes</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Midleton Barry Crockett Legacy</td>
-        <td class="rating">3</td>
+      <td class="name" scope="row">Midleton Barry Crockett Legacy</td>
+      <td class="rating">3</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Powers John’s Lane</td>
-        <td class="rating">1</td>
+      <td class="name" scope="row">Powers John’s Lane</td>
+      <td class="rating">1</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Redbreast 12</td>
-        <td class="rating">3</td>
+      <td class="name" scope="row">Redbreast 12</td>
+      <td class="rating">3</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Teeling Single Grain</td>
-        <td class="rating">0</td>
+      <td class="name" scope="row">Teeling Single Grain</td>
+      <td class="rating">0</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Teeling Single Malt</td>
-        <td class="rating">1</td>
+      <td class="name" scope="row">Teeling Single Malt</td>
+      <td class="rating">1</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Tullamore Dew 14</td>
-        <td class="rating">2</td>
+      <td class="name" scope="row">Tullamore Dew 14</td>
+      <td class="rating">2</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Writers Tears Copper Pot</td>
-        <td class="rating">2</td>
+      <td class="name" scope="row">Writers Tears Copper Pot</td>
+      <td class="rating">2</td>
+      <td class="owned">no</td>
     </tr>
     
   </tbody>
@@ -102,40 +113,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
 <script>
   var options = {
-    valueNames: [ 'name', 'rating' ]
+    valueNames: [ 'name', 'rating', 'owned' ]
   };
 
   var whiskyList = new List('irishTried', options);
 </script>
 
-    </div>
+  </div>
 
-    <div class="column is-6">
-        <h3 class="title is-4">To Try</h3>
-        
-        <!-- <input class="search" placeholder="Search" /> -->
+  <div class="column is-6">
+    <h3 class="title is-4">To Try</h3>
+    
+    <!-- <input class="search" placeholder="Search" /> -->
 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="irishToTry">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name</th>
       <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
+      <th scope="col" class="owned sort" data-sort="owned">Owned</th>
     </tr>
   </thead>
   <tbody class="list">
     
     <tr>
-        <td class="name" scope="row">Knappogue Castle 12</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Knappogue Castle 12</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Midleton Very Rare</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Midleton Very Rare</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Yellow Spot</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Yellow Spot</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
   </tbody>
@@ -144,28 +159,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
 <script>
   var options = {
-    valueNames: [ 'name', 'rating' ]
+    valueNames: [ 'name', 'rating', 'owned' ]
   };
 
   var whiskyList = new List('irishToTry', options);
 </script>
 
-        <hr>
+    <hr>
 <form name="suggestion_irish" method="POST" netlify-honeypot="bot-field-8a7d9e" netlify>
-    <p>Submit a suggestion:</p>
-    <br>
-    <div class="field has-addons">
-        <div class="control">
-          <input class="input" type="text" placeholder="Whisky name" name="whisky_name">
-        </div>
-      <div class="control">
-        <button class="button is-primary" type="submit">Submit</button>
-      </div>
+  <p>Submit a suggestion:</p>
+  <br>
+  <div class="field has-addons">
+    <div class="control">
+      <input class="input" type="text" placeholder="Whisky name" name="whisky_name">
     </div>
-    <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field-8a7d9e"></label></p>
+    <div class="control">
+      <button class="button is-primary" type="submit">Submit</button>
+    </div>
+  </div>
+  <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field-8a7d9e"></label></p>
 </form>
 
-    </div>
+  </div>
 </div>
 
       </div>

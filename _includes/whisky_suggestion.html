@@ -1,14 +1,14 @@
 <hr>
 <form name="suggestion_{{ include.name }}" method="POST" netlify-honeypot="bot-field-8a7d9e" netlify>
-    <p>Submit a suggestion:</p>
-    <br>
-    <div class="field has-addons">
-        <div class="control">
-          <input class="input" type="text" placeholder="Whisky name" name="whisky_name">
-        </div>
-      <div class="control">
-        <button class="button is-primary" type="submit">Submit</button>
-      </div>
+  <p>Submit a suggestion:</p>
+  <br>
+  <div class="field has-addons">
+    <div class="control">
+      <input class="input" type="text" placeholder="Whisky name" name="whisky_name">
     </div>
-    <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field-8a7d9e"></label></p>
+    <div class="control">
+      <button class="button is-primary" type="submit">Submit</button>
+    </div>
+  </div>
+  <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field-8a7d9e"></label></p>
 </form>

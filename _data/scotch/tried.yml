@@ -6,6 +6,7 @@
 
 - name: Dalwhinnie 15
   rating: 3
+  owned: true
 
 - name: Kilkerran work in progress
   rating: 0

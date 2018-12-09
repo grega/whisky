@@ -33,32 +33,36 @@
       <div class="container">
         <h2 class="title is-2">Bourbon</h2>
 <div class="columns">
-    <div class="column is-6">
-        <h3 class="title is-4">Tried</h3>
-        
-        <!-- <input class="search" placeholder="Search" /> -->
+  <div class="column is-6">
+    <h3 class="title is-4">Tried</h3>
+    
+    <!-- <input class="search" placeholder="Search" /> -->
 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="bourbonTried">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name</th>
       <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
+      <th scope="col" class="owned sort" data-sort="owned">Owned</th>
     </tr>
   </thead>
   <tbody class="list">
     
     <tr>
-        <td class="name" scope="row">Bulleit</td>
-        <td class="rating">2</td>
+      <td class="name" scope="row">Bulleit</td>
+      <td class="rating">2</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Bulleit Rye</td>
-        <td class="rating">3</td>
+      <td class="name" scope="row">Bulleit Rye</td>
+      <td class="rating">3</td>
+      <td class="owned">yes</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Woodford Reserve Kentucky Bourbon</td>
-        <td class="rating">1</td>
+      <td class="name" scope="row">Woodford Reserve Kentucky Bourbon</td>
+      <td class="rating">1</td>
+      <td class="owned">no</td>
     </tr>
     
   </tbody>
@@ -67,60 +71,74 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
 <script>
   var options = {
-    valueNames: [ 'name', 'rating' ]
+    valueNames: [ 'name', 'rating', 'owned' ]
   };
 
   var whiskyList = new List('bourbonTried', options);
 </script>
 
-    </div>
+  </div>
 
-    <div class="column is-6">
-        <h3 class="title is-4">To Try</h3>
-        
-        <!-- <input class="search" placeholder="Search" /> -->
+  <div class="column is-6">
+    <h3 class="title is-4">To Try</h3>
+    
+    <!-- <input class="search" placeholder="Search" /> -->
 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="bourbonToTry">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name</th>
       <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
+      <th scope="col" class="owned sort" data-sort="owned">Owned</th>
     </tr>
   </thead>
   <tbody class="list">
     
     <tr>
-        <td class="name" scope="row">Blanton's Gold Edition</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Blanton's Gold Edition</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Buffalo Trace</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Buffalo Trace</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Elijah Craig</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Eagle Rare</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Four Roses Single Barrel</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Elijah Craig</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Jack Daniel's No. 27 Gold</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Four Roses Single Barrel</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Jack Daniel's Single Barrel Rye</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Jack Daniel's No. 27 Gold</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
     <tr>
-        <td class="name" scope="row">Whistlepig Rye</td>
-        <td class="rating">n/a</td>
+      <td class="name" scope="row">Jack Daniel's Single Barrel Rye</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
+    </tr>
+    
+    <tr>
+      <td class="name" scope="row">Whistlepig Rye</td>
+      <td class="rating">n/a</td>
+      <td class="owned">no</td>
     </tr>
     
   </tbody>
@@ -129,28 +147,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
 <script>
   var options = {
-    valueNames: [ 'name', 'rating' ]
+    valueNames: [ 'name', 'rating', 'owned' ]
   };
 
   var whiskyList = new List('bourbonToTry', options);
 </script>
 
-        <hr>
+    <hr>
 <form name="suggestion_bourbon" method="POST" netlify-honeypot="bot-field-8a7d9e" netlify>
-    <p>Submit a suggestion:</p>
-    <br>
-    <div class="field has-addons">
-        <div class="control">
-          <input class="input" type="text" placeholder="Whisky name" name="whisky_name">
-        </div>
-      <div class="control">
-        <button class="button is-primary" type="submit">Submit</button>
-      </div>
+  <p>Submit a suggestion:</p>
+  <br>
+  <div class="field has-addons">
+    <div class="control">
+      <input class="input" type="text" placeholder="Whisky name" name="whisky_name">
     </div>
-    <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field-8a7d9e"></label></p>
+    <div class="control">
+      <button class="button is-primary" type="submit">Submit</button>
+    </div>
+  </div>
+  <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field-8a7d9e"></label></p>
 </form>
 
-    </div>
+  </div>
 </div>
 
       </div>

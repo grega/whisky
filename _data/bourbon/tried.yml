@@ -1,5 +1,6 @@
 - name: Bulleit Rye
   rating: 3
+  owned: true
 
 - name: Bulleit
   rating: 2

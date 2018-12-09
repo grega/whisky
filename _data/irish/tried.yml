@@ -27,3 +27,4 @@
 
 - name: Jameson Irish Whiskey
   rating: 2
+  owned: true
