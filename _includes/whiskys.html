@@ -1,10 +1,10 @@
 <!-- <input class="search" placeholder="Search" /> -->
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.table-id}}">
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.tableID}}">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name</th>
       <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
-      <th scope="col" class="owned sort" data-sort="owned">Owned</th>
+      {% if include.displayOwned %}<th scope="col" class="owned sort" data-sort="owned">Owned</th>{% endif %}
     </tr>
   </thead>
   <tbody class="list">
@@ -12,7 +12,7 @@
     <tr>
       <td class="name" scope="row">{{ whisky.name }}</td>
       <td class="rating">{{ whisky.rating | default: "n/a"}}</td>
-      <td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" }}</td>
+      {% if include.displayOwned %}<td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" }}</td>{% endif %}
     </tr>
     {% endfor %}
   </tbody>
@@ -24,5 +24,5 @@
     valueNames: [ 'name', 'rating', 'owned' ]
   };
 
-  var whiskyList = new List('{{include.table-id}}', options);
+  var whiskyList = new List('{{include.tableID}}', options);
 </script>
