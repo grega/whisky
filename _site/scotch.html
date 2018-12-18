@@ -4,29 +4,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Whisky</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" integrity="sha384-cX6t2fHVBGJY7XVcJYPJJJS7nHG0AcC45H//gbb9MZkBxLD4rQ3SQkTYZwxOclNs" crossorigin="anonymous">
+    <title>Scotch - Whisky</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha384-n+0XPuNbU1PaXosJ2ARqt1UgnvuTZqsh+D9uoJRHCanp/VOTJXtZaWOzCzwMZF0n" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     <nav class="navbar is-light">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <h1 class="title is-2">Whisky</h1>
-            </a>
-        </div>
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <h1 class="title is-2">Whisky</h1>
+        </a>
+      </div>
 
-        <div class="navbar-menu is-active" id="navMenu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="/scotch">Scotch</a>
-                <a class="navbar-item" href="/irish">Irish</a>
-                <a class="navbar-item" href="/bourbon">Bourbon</a>
-                <a class="navbar-item" href="/japanese">Japanese</a>
-                <a class="navbar-item" href="/english">English</a>
-                <a class="navbar-item" href="/welsh">Welsh</a>
-            </div>
-            <div class="navbar-end"></div>
+      <div class="navbar-menu is-active" id="navMenu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/scotch">Scotch</a>
+          <a class="navbar-item" href="/irish">Irish</a>
+          <a class="navbar-item" href="/bourbon">Bourbon</a>
+          <a class="navbar-item" href="/japanese">Japanese</a>
+          <a class="navbar-item" href="/english">English</a>
+          <a class="navbar-item" href="/welsh">Welsh</a>
         </div>
+        <div class="navbar-end"></div>
+      </div>
     </nav>
 
     <section class="section">
@@ -36,13 +37,13 @@
   <div class="column is-6">
     <h3 class="title is-4">Tried</h3>
     
-    <!-- <input class="search" placeholder="Search" /> -->
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="scotchTried">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="scotchTried">
   <thead>
     <tr>
-      <th scope="col" class="sort" data-sort="name">Name</th>
-      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
-      <th scope="col" class="owned sort" data-sort="owned">Owned</th>
+      <th scope="col" class="sort" data-sort="name">Name <i class="fas fa-sort"></i></th>
+      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3) <i class="fas fa-sort"></i></th>
+      <th scope="col" class="owned sort" data-sort="owned">Owned <i class="fas fa-sort"></i></th>
+      <th scope="col" class="Link">Link</th>
     </tr>
   </thead>
   <tbody class="list">
@@ -51,168 +52,196 @@
       <td class="name" scope="row">Aberlour 10</td>
       <td class="rating">3</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Aberlour+10">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Auchentoshan 12</td>
       <td class="rating">2</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Auchentoshan+12">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Auchentoshan Three Wood</td>
       <td class="rating">3</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Auchentoshan+Three+Wood">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Aultmore 12</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Aultmore+12">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Balvenie 14 Caribbean Cask</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Balvenie+14+Caribbean+Cask">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Balvenie Doublewood 12</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Balvenie+Doublewood+12">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Benromach 10</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Benromach+10">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Cardhu Gold Reserve</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Cardhu+Gold+Reserve">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Chivas Regal 18</td>
       <td class="rating">2</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Chivas+Regal+18">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Dalwhinnie 15</td>
       <td class="rating">3</td>
       <td class="owned">yes</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Dalwhinnie+15">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Dalwhinnie Winter’s Gold</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Dalwhinnie+Winter%E2%80%99s+Gold">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glen Garioch Founders Reserve</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glen+Garioch+Founders+Reserve">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glenfiddich 15</td>
       <td class="rating">2</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glenfiddich+15">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glenfiddich 18</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glenfiddich+18">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glenlivet 18</td>
       <td class="rating">3</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glenlivet+18">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glenmorangie Port Wood Finish</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glenmorangie+Port+Wood+Finish">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Johnnie Walker Black Label 12</td>
       <td class="rating">2</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Johnnie+Walker+Black+Label+12">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Kilkerran work in progress</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Kilkerran+work+in+progress">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Lagavulin 16</td>
       <td class="rating">2</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Lagavulin+16">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Laphroiag 10</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Laphroiag+10">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">MacAllan 10 Sherry Oak</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=MacAllan+10+Sherry+Oak">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Monkey Shoulder</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Monkey+Shoulder">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Oban 14</td>
       <td class="rating">2</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Oban+14">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Talisker 10</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Talisker+10">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Talisker Skye</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Talisker+Skye">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Talisker Storm</td>
       <td class="rating">0</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Talisker+Storm">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Tomatin Legacy</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Tomatin+Legacy">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Tomintoul 14</td>
       <td class="rating">1</td>
       <td class="owned">no</td>
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Tomintoul+14">Link</a></td>
     </tr>
     
   </tbody>
@@ -232,13 +261,13 @@
   <div class="column is-6">
     <h3 class="title is-4">To Try</h3>
     
-    <!-- <input class="search" placeholder="Search" /> -->
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="scotchToTry">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="scotchToTry">
   <thead>
     <tr>
-      <th scope="col" class="sort" data-sort="name">Name</th>
-      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3)</th>
+      <th scope="col" class="sort" data-sort="name">Name <i class="fas fa-sort"></i></th>
+      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3) <i class="fas fa-sort"></i></th>
       
+      <th scope="col" class="Link">Link</th>
     </tr>
   </thead>
   <tbody class="list">
@@ -247,54 +276,63 @@
       <td class="name" scope="row">Aberlour 12 Double Cask</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Aberlour+12+Double+Cask">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Ardbeg Uigeadail</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Ardbeg+Uigeadail">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Deanston 12</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Deanston+12">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glenfarclas 10</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glenfarclas+10">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glenglassaugh Revival</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glenglassaugh+Revival">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Glenmorangie 10 Original</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Glenmorangie+10+Original">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Johnnie Walker Green Label 15</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Johnnie+Walker+Green+Label+15">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Laphroaig Quarter Cask</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Laphroaig+Quarter+Cask">Link</a></td>
     </tr>
     
     <tr>
       <td class="name" scope="row">Scapa Skiren</td>
       <td class="rating">n/a</td>
       
+      <td class="link"><a href="https://www.masterofmalt.com/search/#search=Scapa+Skiren">Link</a></td>
     </tr>
     
   </tbody>
@@ -330,19 +368,19 @@
       </div>
     </section>
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-          var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-          if ($navbarBurgers.length > 0) {
-            $navbarBurgers.forEach(function ($el) {
-              $el.addEventListener('click', function () {
-                var target = $el.dataset.target;
-                var $target = document.getElementById(target);
-                $el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-              });
+      document.addEventListener('DOMContentLoaded', function () {
+        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach(function ($el) {
+            $el.addEventListener('click', function () {
+              var target = $el.dataset.target;
+              var $target = document.getElementById(target);
+              $el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
             });
-          }
-        });
+          });
+        }
+      });
     </script>
   </body>
 </html>
