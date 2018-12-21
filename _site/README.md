@@ -1,5 +1,5 @@
 # Whisky
-Keeping tabs on whisk(e)y
+Keeping tabs on whisk(e)y at: https://whisky.gregannandale.com
 
 ## Dev
 ```

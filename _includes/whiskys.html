@@ -1,3 +1,4 @@
+{% assign whiskyCounter = 0 %}
 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.tableID}}">
   <thead>
     <tr>
@@ -9,15 +10,19 @@
   </thead>
   <tbody class="list">
     {% for whisky in include.whiskys %}
-    <tr>
-      <td class="name" scope="row">{{ whisky.name }}</td>
-      <td class="rating">{{ whisky.rating | default: "n/a"}}</td>
-      {% if include.displayOwned %}<td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" }}</td>{% endif %}
-      <td class="link"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
-    </tr>
+    {% assign whiskyCounter = whiskyCounter | plus: 1 %}
+      <tr class="whisky-{{ whiskyCounter }}">
+        <td class="name" scope="row">{{ whisky.name }}</td>
+        <td class="rating">{{ whisky.rating | default: "n/a"}}</td>
+        {% if include.displayOwned %}<td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" }}</td>{% endif %}
+        <td class="link"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
+      </tr>
     {% endfor %}
   </tbody>
 </table>
+
+<p class="whisky-total" scope="row"><i>Total: {{ whiskyCounter }}</i></p>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
 <script>
