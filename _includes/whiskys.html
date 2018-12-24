@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name <i class="fas fa-sort"></i></th>
-      <th scope="col" class="rating-title sort" data-sort="rating">Rating (out of 3) <i class="fas fa-sort"></i></th>
+      {% if include.displayRating %}<th scope="col" class="rating-title sort" data-sort="rating">Rating (0 to 3) <i class="fas fa-sort"></i></th>{% endif %}
       {% if include.displayOwned %}<th scope="col" class="owned sort" data-sort="owned">Owned <i class="fas fa-sort"></i></th>{% endif %}
       <th scope="col" class="Link">Link</th>
     </tr>
@@ -13,7 +13,7 @@
     {% assign whiskyCounter = whiskyCounter | plus: 1 %}
       <tr class="whisky-{{ whiskyCounter }}">
         <td class="name" scope="row">{{ whisky.name }}</td>
-        <td class="rating">{{ whisky.rating | default: "n/a"}}</td>
+        {% if include.displayRating %}<td class="rating">{{ whisky.rating }}</td>{% endif %}
         {% if include.displayOwned %}<td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" }}</td>{% endif %}
         <td class="link"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
       </tr>

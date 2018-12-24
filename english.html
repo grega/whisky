@@ -8,9 +8,10 @@ title: English
   <div class="column is-6">
     <h3 class="title is-4">Tried</h3>
     {% assign english_tried_sorted = (site.data.english.tried | sort: 'name') %}
-    {% include whiskys.html whiskys=english_tried_sorted tableID="englishTried" displayOwned=true %}
+    {% include whiskys.html whiskys=english_tried_sorted tableID="englishTried" displayOwned=true displayRating=true %}
   </div>
-  <div class="column is-6">
+  
+  <div class="column is-5 is-offset-1">
     <h3 class="title is-4">To Try</h3>
     {% include whisky_suggestion.html name="english" %}
   </div>
