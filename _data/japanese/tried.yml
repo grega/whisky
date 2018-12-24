@@ -3,6 +3,7 @@
 
 - name: Nikka “From the Barrel”
   rating: 3
+  owned: true
 
 - name: Nikka Coffey Grain
   rating: 2
