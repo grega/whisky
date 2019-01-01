@@ -8,13 +8,13 @@ title: Bourbon
   <div class="column is-6">
     <h3 class="title is-4">Tried</h3>
     {% assign bourbon_tried_sorted = (site.data.bourbon.tried | sort: 'name') %}
-    {% include whiskys.html whiskys=bourbon_tried_sorted tableID="bourbonTried" displayOwned=true displayRating=true %}
+    {% include whiskys.html whiskys=bourbon_tried_sorted tableID="bourbonTried" triedTable=true %}
   </div>
 
   <div class="column is-5 is-offset-1">
     <h3 class="title is-4">To Try</h3>
     {% assign bourbon_to_try_sorted = (site.data.bourbon.to_try | sort: 'name') %}
-    {% include whiskys.html whiskys=bourbon_to_try_sorted tableID="bourbonToTry"  %}
+    {% include whiskys.html whiskys=bourbon_to_try_sorted tableID="bourbonToTry" toTryTable=true %}
     {% include whisky_suggestion.html name="bourbon" %}
   </div>
 </div>

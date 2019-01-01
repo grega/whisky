@@ -2,8 +2,19 @@
 - name: Johnnie Walker Green Label 15
 - name: Aberlour 12 Double Cask
 - name: Deanston 12
+  owned: true
 - name: Glenglassaugh Revival
+  owned: true
 - name: Glenfarclas 10
+- name: Glenfarclas 15
+  owned: true
 - name: Glenmorangie 10 Original
+  owned: true
 - name: Laphroaig Quarter Cask
 - name: Scapa Skiren
+- name: Hazelburn 10
+  owned: true
+- name: Springbank 10
+  owned: true
+- name: Longrow Peated
+  owned: true

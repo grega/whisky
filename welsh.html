@@ -8,7 +8,7 @@ title: Welsh
   <div class="column is-6">
     <h3 class="title is-4">Tried</h3>
     {% assign welsh_tried_sorted = (site.data.welsh.tried | sort: 'name') %}
-    {% include whiskys.html whiskys=welsh_tried_sorted tableID="welshTried" displayOwned=true displayRating=true %}
+    {% include whiskys.html whiskys=welsh_tried_sorted tableID="welshTried" triedTable=true %}
   </div>
   
   <div class="column is-5 is-offset-1">
