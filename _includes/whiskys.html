@@ -1,4 +1,5 @@
 {% assign whiskyCounter = 0 %}
+{% assign ownedWhiskyCounter = 0 %}
 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.tableID}}">
   <thead>
     <tr>
@@ -13,6 +14,9 @@
   <tbody class="list">
     {% for whisky in include.whiskys %}
     {% assign whiskyCounter = whiskyCounter | plus: 1 %}
+    {% if whisky.owned %}
+      {% assign ownedWhiskyCounter = ownedWhiskyCounter | plus: 1 %}
+    {% endif %}
       <tr class="whisky-{{ whiskyCounter }}">
         <td class="name" scope="row">{{ whisky.name }}</td>
         {% if include.triedTable %}
@@ -25,7 +29,7 @@
   </tbody>
 </table>
 
-<p class="whisky-total" scope="row"><i>Total: {{ whiskyCounter }}</i></p>
+<p class="whisky-total" scope="row"><i>Total: {{ whiskyCounter }} (owned: {{ ownedWhiskyCounter }})</i></p>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
