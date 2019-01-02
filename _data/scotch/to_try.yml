@@ -1,5 +1,6 @@
 - name: Ardbeg Uigeadail
 - name: Johnnie Walker Green Label 15
+  owned: true
 - name: Aberlour 12 Double Cask
 - name: Deanston 12
   owned: true
