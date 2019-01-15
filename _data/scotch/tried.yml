@@ -99,3 +99,7 @@
 - name: Springbank 10
   rating: 2
   owned: true
+
+- name: Longrow Peated
+  rating: 2
+  owned: true
