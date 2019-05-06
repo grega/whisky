@@ -3,10 +3,18 @@
   owned: true
 - name: Aberlour 12 Double Cask
 - name: Glenfarclas 10
-- name: Glenmorangie 10 Original
-  owned: true
 - name: Laphroaig Quarter Cask
 - name: Scapa Skiren
 - name: Aberlour A'bunadh
 - name: GlenDronach Parliament 21
+  owned: true
+- name: The Ileach Peaty
+  owned: true
+- name: The Arran Malt 10
+  owned: true
+- name: Glencadam 10
+  owned: true
+- name: Tomintoul 10
+  owned: true
+- name: Hamiltons Lowland Single Malt
   owned: true
