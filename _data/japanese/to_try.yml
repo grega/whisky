@@ -1,3 +1,6 @@
 - name: Nikka Taketsuru Pure Malt
+  owned: true
 - name: Suntory Yamazaki 12
 - name: Hakushu Single Malt
+- name: Hakushu Distiller's Reserve
+  owned: true

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Canadian
+---
+
+<h2 class="title is-2">Canadian</h2>
+<div class="columns">
+  <div class="column is-6">
+    <h3 class="title is-4">Tried</h3>
+    {% assign canadian_tried_sorted = (site.data.canadian.tried | sort: 'name') %}
+    {% include whiskys.html whiskys=canadian_tried_sorted tableID="canadianTried" triedTable=true %}
+  </div>
+
+  <div class="column is-5 is-offset-1">
+    <h3 class="title is-4">To Try</h3>
+    {% assign canadian_to_try_sorted = (site.data.canadian.to_try | sort: 'name') %}
+    {% include whiskys.html whiskys=canadian_to_try_sorted tableID="canadianToTry" toTryTable=true %}
+    {% include whisky_suggestion.html name="canadian" %}
+  </div>
+</div>
