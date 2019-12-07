@@ -7,14 +7,16 @@ title: American
 <div class="columns">
   <div class="column is-6">
     <h3 class="title is-4">Tried</h3>
-    {% assign american_tried_sorted = (site.data.american.tried | sort: 'name') %}
+    {% assign american_tried_sorted = site.data.american.tried | sort: 'name' %}
     {% include whiskys.html whiskys=american_tried_sorted tableID="americanTried" triedTable=true %}
   </div>
 
   <div class="column is-5 is-offset-1">
     <h3 class="title is-4">To Try</h3>
-    {% assign american_to_try_sorted = (site.data.american.to_try | sort: 'name') %}
-    {% include whiskys.html whiskys=american_to_try_sorted tableID="americanToTry" toTryTable=true %}
+    {% if site.data.american.to_try %}
+      {% assign american_to_try_sorted = site.data.american.to_try | sort: 'name' %}
+      {% include whiskys.html whiskys=american_to_try_sorted tableID="americanToTry" toTryTable=true %}
+    {% endif %}
     {% include whisky_suggestion.html name="american" %}
   </div>
 </div>
