@@ -1,7 +1,42 @@
 - name: Suntory Yamazaki 12
 - name: Hakushu Single Malt
-- name: Mars Maltage Cosmo
-- name: Suntory Toki
 - name: Nikka Coffey Malt
+  owned: true
 - name: Yoichi Single Malt
+  owned: true
+- name: Nikka Pure Malt Black
+  owned: true
+- name: Tagouchi 12
+  owned: true
+- name: Nikka Pure Malt Red
+  owned: true
+- name: Tokinoka White Oak Black
+  owned: true
+- name: Hatozaki Blended
+  owned: true
 - name: The Nikka 12
+  owned: true
+- name: Suntory Toki
+  owned: true
+- name: Yamazaki Distiller's Reserve
+  owned: true
+- name: Mars Maltage Cosmo
+  owned: true
+- name: Kamiki
+  owned: true
+- name: Miyagikyo Single Malt
+  owned: true
+- name: Mars Komagatake Shinanotanpopo - Nature of Shinshu
+  owned: true
+- name: Tokinoka White Oak
+  owned: true
+- name: Japanese Blended Whisky Batch 2 - 21 Year Old (That Boutique-y Whisky Company)
+  owned: true
+- name: Tagouchi 15
+  owned: true
+- name: Kura The Whisky - Rum Cask Finish
+  owned: true
+- name: Yamazaki 18
+  owned: true
+- name: Sanmi-Ittai Single Cask Batch No. 9585 1st Edition
+  owned: true
