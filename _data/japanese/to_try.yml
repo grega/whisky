@@ -22,8 +22,6 @@
   owned: true
 - name: Mars Maltage Cosmo
   owned: true
-- name: Kamiki
-  owned: true
 - name: Miyagikyo Single Malt
   owned: true
 - name: Tokinoka White Oak
@@ -34,7 +32,7 @@
   owned: true
 - name: Kura The Whisky - Rum Cask Finish
   owned: true
-- name: Yamazaki 18
+- name: Suntory Yamazaki 18
   owned: true
 - name: Sanmi-Ittai Single Cask Batch No. 9585 1st Edition
   owned: true
