@@ -13,6 +13,7 @@
   
 - name: WhistlePig 10 Year Old
   rating: 3
+  owned: true
   
 - name: Blanton's Straight from the Barrel (barrel 419)
   rating: 2
