@@ -10,11 +10,11 @@
 
 - name: Old Grand-Dad Bonded 100 Proof
   rating: 2
-  
+
 - name: WhistlePig 10 Year Old
   rating: 3
   owned: true
-  
+
 - name: Blanton's Straight from the Barrel (barrel 419)
   rating: 2
 
@@ -43,4 +43,13 @@
   rating: 3
 
 - name: Pikesville 6 Year Old 110 Proof Straight Rye
+  rating: 2
+
+- name: Kentucky Peerless 3 Year Old Rye - Batch 1 (That Boutique-Y Rye Company
+  rating: 3
+
+- name: Sonoma Distilling Co. Cherrywood Rye
+  rating 3
+
+- name: WhistlePig 15 Year Old
   rating: 2

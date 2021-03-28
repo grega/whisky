@@ -1,0 +1,15 @@
+--- layout: default title: Finnish ---
+
+<h2 class="title is-2">Finnish</h2>
+<div class="columns">
+  <div class="column is-6">
+    <h3 class="title is-4">Tried</h3>
+    {% assign finnish_tried_sorted = site.data.finnish.tried | sort: 'name' %} {% include whiskys.html whiskys=finnish_tried_sorted tableID="finnishTried" triedTable=true %}
+  </div>
+
+  <div class="column is-5 is-offset-1">
+    <h3 class="title is-4">To Try</h3>
+    {% if site.data.finnish.to_try %} {% assign finnish_to_try_sorted = site.data.finnish.to_try | sort: 'name' %} {% include whiskys.html whiskys=finnish_to_try_sorted tableID="finnishToTry" toTryTable=true %} {% endif %} {% include whisky_suggestion.html
+    name="finnish" %}
+  </div>
+</div>
