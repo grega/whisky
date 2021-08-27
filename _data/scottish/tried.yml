@@ -73,13 +73,13 @@
 
 - name: Lagavulin 16
   rating: 2
-  
+
 - name: Glen Garioch Founders Reserve
   rating: 1
 
 - name: Monkey Shoulder
   rating: 1
-  
+
 - name: Oban 14
   rating: 2
 
@@ -127,6 +127,21 @@
 
 - name: Tullibardine Sovereign
   rating: 1
-  
+
 - name: Laphroaig Quarter Cask
+  rating: 3
+
+- name: Annandale Man O'Sword 2015 Ex-Sherry Butt
+  rating: 2
+
+- name: Annandale Man O'Words 2015 Ex-Sherry Butt
+  rating: 2
+
+- name: Annandale Man O'Sword 2015 Ex-Bourbon Cask
+  rating: 2
+
+- name: Annandale Man O'Words 2015 Ex-Bourbon Cask
+  rating: 2
+
+- name: Annandale Outlaw King
   rating: 3
