@@ -169,7 +169,7 @@
 - name: Bruichladdich The Classic Laddie
   rating: 3
 
-- name: Bruichladdich Port Charlotte 10
+- name: Port Charlotte 10
   rating: 2
   
 - name: Bruichladdich Islay Barley 2012
@@ -178,7 +178,7 @@
 - name: Bruichladdich The Organic 10
   rating: 3
 
-- name: Bruichladdich Port Charlotte PAC:01 2011
+- name: Port Charlotte PAC:01 2011
   rating: 3
 
 - name: Bunnahabhain 24 year (A.D. Rattray Cask Collection)
@@ -189,3 +189,18 @@
 
 - name: The Glenlivet Founders Reserve
   rating: 2
+
+- name: Bruichladdich The Laddie Eight
+  rating: 2
+
+- name: Bruichladdich Bere Barley 2011
+  rating: 3
+
+- name: Port Charlotte OLC:01 2010
+  rating: 3
+
+- name: Octomore 12.3
+  rating: 3
+
+- name: Octomore 10 2021 Release
+  rating: 3
