@@ -1,3 +1,7 @@
 - name: Brenne Cuvée Spéciale
   rating: 3
   owned: true
+
+- name: Armorik Classic
+  rating: 2
+  owned: true
