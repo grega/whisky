@@ -211,8 +211,11 @@
 - name: Laphroiag Select
   rating: 2
 
-- name: Laphroiag 10 Sherry Oak
+- name: Laphroiag 10 Sherry Cask
   rating: 2 
 
 - name: Laphroiag Cask Strength Batch 11
+  rating: 2
+  
+- name: Laphroiag Lore
   rating: 2
