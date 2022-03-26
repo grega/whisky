@@ -130,7 +130,8 @@
 
 - name: Laphroaig Quarter Cask
   rating: 3
-
+  owned: true
+  
 - name: Annandale Man O'Sword 2015 Ex-Sherry Butt
   rating: 2
 
@@ -195,6 +196,7 @@
 
 - name: Bruichladdich Bere Barley 2011
   rating: 3
+  owned: true
 
 - name: Port Charlotte OLC:01 2010
   rating: 3
