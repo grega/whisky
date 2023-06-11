@@ -2,12 +2,14 @@
 Keeping tabs on whisk(e)y at: https://whisky.gregannandale.com
 
 ## Dev
+
 ```
+asdf install
 bundle install
 ```
 
 ```
-jekyll serve
+bundle exec jekyll serve
 ```
 
 ```
