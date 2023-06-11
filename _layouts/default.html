@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} - Whisky</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha384-n+0XPuNbU1PaXosJ2ARqt1UgnvuTZqsh+D9uoJRHCanp/VOTJXtZaWOzCzwMZF0n" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha384-HmYpsz2Aa9Gh3JlkCoh8kUJ2mUKJKTnkyC2Lzt8aLzpPOpnDe8KpFE2xNiBpMDou" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,9 +17,14 @@
       <a class="navbar-item" href="/">
         <h1 class="title is-2">Whisky</h1>
       </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
-    <div class="navbar-menu is-active" id="navMenu">
+    <div class="navbar-menu" id="navMenu">
       <div class="navbar-start">
         <a class="navbar-item {% if page.title == 'Scottish' %}is-active{% endif %}" href="/scottish">Scottish</a>
         <a class="navbar-item {% if page.title == 'Irish' %}is-active{% endif %}" href="/irish">Irish</a>
@@ -33,6 +38,7 @@
         <a class="navbar-item {% if page.title == 'French' %}is-active{% endif %}" href="/french">French</a>
         <a class="navbar-item {% if page.title == 'German' %}is-active{% endif %}" href="/german">German</a>
         <a class="navbar-item {% if page.title == 'Indian' %}is-active{% endif %}" href="/indian">Indian</a>
+        <a class="navbar-item {% if page.title == 'Mexican' %}is-active{% endif %}" href="/mexican">Mexican</a>
         <a class="navbar-item {% if page.title == 'Swedish' %}is-active{% endif %}" href="/swedish">Swedish</a>
         <a class="navbar-item {% if page.title == 'Taiwanese' %}is-active{% endif %}" href="/taiwanese">Taiwanese</a>
         <a class="navbar-item {% if page.title == 'Welsh' %}is-active{% endif %}" href="/welsh">Welsh</a>
@@ -47,18 +53,16 @@
     </div>
   </section>
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-      if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach(function($el) {
-          $el.addEventListener('click', function() {
-            var target = $el.dataset.target;
-            var $target = document.getElementById(target);
-            $el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-          });
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
         });
-      }
+      });
     });
   </script>
 </body>
