@@ -1,6 +1,18 @@
 ---
 ---
 
+.navbar {
+  flex-wrap: wrap;
+}
+
+.navbar-menu {
+  flex-shrink: 1;
+}
+
+.navbar-start {
+  flex-wrap: wrap;
+}
+
 tbody tr th {
     font-weight: normal;
 }
@@ -14,5 +26,5 @@ th.sort {
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
