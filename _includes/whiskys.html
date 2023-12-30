@@ -23,7 +23,11 @@
         	<td class="rating">{{ whisky.rating }}</td>
        	{% endif %}
        	<td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" | replace: "false", "no" }}</td>
+        {% if whisky.link %}
+        	<td class="link"><a href="{{ whisky.link }}">Link</a></td>
+        {% else %} 
         <td class="link"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
+        {% endif %}
       </tr>
     {% endfor %}
   </tbody>
