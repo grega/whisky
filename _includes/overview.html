@@ -1,0 +1,24 @@
+{% assign whisky_type = include.name | downcase %}
+
+{% capture tried_table_id %}{{ 'Tried' | prepend: whisky_type }}{% endcapture%}
+{% capture to_try_table_id %}{{ 'ToTry' | prepend: whisky_type }}{% endcapture%}
+
+<h2 class="title is-2">{{ include.name }}</h2>
+<div class="columns">
+  <div class="column is-6">
+    <h3 class="title is-4">Tried</h3>
+    {% if site.data[whisky_type].tried %}
+      {% assign tried_sorted = site.data[whisky_type].tried | sort: 'name' %}
+      {% include whiskys.html whiskys=tried_sorted tableID=tried_table_id triedTable=true %}
+    {% endif %}
+  </div>
+
+  <div class="column is-5 is-offset-1">
+    <h3 class="title is-4">To Try</h3>
+    {% if site.data[whisky_type].to_try %}
+      {% assign to_try_sorted = site.data[whisky_type].to_try | sort: 'name' %}
+      {% include whiskys.html whiskys=to_try_sorted tableID=to_try_table_id toTryTable=true %}
+    {% endif %}
+    {% include whisky_suggestion.html name=whisky_type %}
+  </div>
+</div>
