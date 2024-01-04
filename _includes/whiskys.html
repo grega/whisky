@@ -20,7 +20,7 @@
       <tr class="whisky-{{ whiskyCounter }}">
         <td class="name" scope="row">{{ whisky.name }}</td>
         {% if include.triedTable %}
-        	<td class="rating">{{ whisky.rating }}</td>
+        <td class="rating">{{ whisky.rating }}</td>
        	{% endif %}
        	<td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" | replace: "false", "no" }}</td>
         {% if whisky.link %}
