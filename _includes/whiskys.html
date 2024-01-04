@@ -13,7 +13,7 @@
   </thead>
   <tbody class="list">
     {% for whisky in include.whiskys %}
-    {% assign whiskyCounter = whiskyCounter | plus: 1 %}
+      {% assign whiskyCounter = whiskyCounter | plus: 1 %}
     {% if whisky.owned %}
       {% assign ownedWhiskyCounter = ownedWhiskyCounter | plus: 1 %}
     {% endif %}
