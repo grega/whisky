@@ -24,6 +24,7 @@
 
 - name: Midleton Barry Crockett Legacy
   rating: 3
+  owned: true
 
 - name: Jameson Irish Whiskey
   rating: 2
