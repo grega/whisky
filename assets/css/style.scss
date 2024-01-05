@@ -1,6 +1,10 @@
 ---
 ---
 
+.container:not(.is-max-desktop):not(.is-max-widescreen) {
+  max-width: 1680px;
+}
+
 .navbar {
   flex-wrap: wrap;
 }

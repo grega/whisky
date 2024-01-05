@@ -1,10 +1,10 @@
-{% assign whiskyCounter = 0 %}
-{% assign ownedWhiskyCounter = 0 %}
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.tableID}}">
+{% assign whisky_counter = 0 %}
+{% assign whisky_counter_owned = 0 %}
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.table_id}}">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name <i class="fas fa-sort"></i></th>
-      {% if include.triedTable %}
+      {% if include.table_tried %}
       <th scope="col" class="rating-title sort" data-sort="rating">Rating (0 to 3) <i class="fas fa-sort"></i></th>
       {% endif %}
       <th scope="col" class="owned sort" data-sort="owned">Owned <i class="fas fa-sort"></i></th>
@@ -13,32 +13,32 @@
   </thead>
   <tbody class="list">
     {% for whisky in include.whiskys %}
-      {% assign whiskyCounter = whiskyCounter | plus: 1 %}
+      {% assign whisky_counter = whisky_counter | plus: 1 %}
     {% if whisky.owned %}
-      {% assign ownedWhiskyCounter = ownedWhiskyCounter | plus: 1 %}
+      {% assign whisky_counter_owned = whisky_counter_owned | plus: 1 %}
     {% endif %}
-      <tr class="whisky-{{ whiskyCounter }}">
-        <td class="name" scope="row">{{ whisky.name }}</td>
-        {% if include.triedTable %}
-        <td class="rating">{{ whisky.rating }}</td>
+      <tr class="whisky-{{ whisky_counter }}">
+        <td class="name pt-2 pb-2" scope="row">{{ whisky.name }}</td>
+        {% if include.table_tried %}
+        <td class="rating pt-2 pb-2">{{ whisky.rating }}</td>
        	{% endif %}
-       	<td class="owned">{{ whisky.owned | default: "no" | replace: "true", "yes" | replace: "false", "no" }}</td>
+       	<td class="owned pt-2 pb-2">{{ whisky.owned | default: "no" | replace: "true", "yes" | replace: "false", "no" }}</td>
         {% if whisky.link %}
-        <td class="link"><a href="{{ whisky.link }}">Link</a></td>
+        <td class="link pt-2 pb-2"><a href="{{ whisky.link }}">Link</a></td>
         {% else %} 
-        <td class="link"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
+        <td class="link pt-2 pb-2"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
         {% endif %}
       </tr>
     {% endfor %}
   </tbody>
 </table>
 
-<p class="whisky-total" scope="row"><i>Total: {{ whiskyCounter }} (owned: {{ ownedWhiskyCounter }})</i></p>
+<p class="whisky-total" scope="row"><i>Total: {{ whisky_counter }} (owned: {{ whisky_counter_owned }})</i></p>
 
 <script>
   var options = {
     valueNames: [ 'name', 'rating', 'owned' ]
   };
 
-  var whiskyList = new List('{{include.tableID}}', options);
+  var whiskyList = new List('{{include.table_id}}', options);
 </script>
