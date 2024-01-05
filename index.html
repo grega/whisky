@@ -1,3 +1,46 @@
 ---
 layout: default
+title: Regions
 ---
+
+<div class="columns">
+  <div class="column is-6">
+    <h2 class="title is-2">Regions</h2>
+    <table class="table is-bordered is-striped is-narrow is-fullwidth" id="regions">
+      <thead>
+        <tr>
+          <th scope="col" class="sort" data-sort="name">Region <i class="fas fa-sort"></i></th>
+          <th scope="col" class="sort" data-sort="tried">Tried <i class="fas fa-sort"></i></th>
+        </tr>
+      </thead>
+      <tbody class="list">
+        {% for region in site.data %}
+          <tr>
+            <td class="name" scope="row"><a href="/{{ region[0] }}">{{ region[0] | capitalize }}</a></td>
+            <td class="tried" scope="row">{{ region[1].tried.size | default: 0 }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="column is-5 is-offset-1">
+    <h3 class="title is-4 mt-5">Rating definitions:</h3>
+    <ul>
+      <li class="mb-2"><b>0</b>: Not good, won't drink again</li>
+      <li class="mb-2"><b>1</b>: Ok, may drink again if low on options</li>
+      <li class="mb-2"><b>2</b>: Excellent, likely to drink again</li>
+      <li class="mb-2"><b>3</b>: Superb, should own</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  var options = {
+    valueNames: [ 'name', 'tried' ]
+  };
+
+  var whiskyList = new List('regions', options);
+  
+  whiskyList.sort('tried', { order: 'desc' });
+</script>

@@ -25,6 +25,18 @@ th.sort {
   cursor: pointer;
 }
 
+td {
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
 .hidden {
   display: none;
 }
