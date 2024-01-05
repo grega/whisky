@@ -46,7 +46,7 @@
 - name: Pikesville 6 Year Old 110 Proof Straight Rye
   rating: 2
 
-- name: Kentucky Peerless 3 Year Old Rye - Batch 1 (That Boutique-Y Rye Company
+- name: Kentucky Peerless 3 (That Boutique-y Rye Company)
   rating: 3
 
 - name: Sonoma Distilling Co. Cherrywood Rye
@@ -84,4 +84,5 @@
 
 - name: Judson & Moore Bourbon
   rating: 3
+  owned: true
   link: https://judsonandmoore.com/pages/our-whiskeys
