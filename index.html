@@ -15,6 +15,7 @@ title: Regions
           <th scope="col" class="sort" data-sort="tried">Tried <i class="fas fa-sort"></i></th>
         </tr>
       </thead>
+      
       <tbody class="list">
         {% for region in site.data %}
         {% assign tried_counter = tried_counter | plus: region[1].tried.size %}
@@ -39,7 +40,7 @@ title: Regions
   </div>
 </div>
 
-<script>
+<script type="text/javascript">
   var options = {
     valueNames: [ 'name', 'tried' ]
   };
