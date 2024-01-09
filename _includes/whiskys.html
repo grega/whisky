@@ -1,5 +1,6 @@
 {% assign whisky_counter = 0 %}
 {% assign whisky_counter_owned = 0 %}
+
 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.table_id}}">
   <thead>
     <tr>
@@ -11,6 +12,7 @@
       <th scope="col" class="Link">Link</th>
     </tr>
   </thead>
+  
   <tbody class="list">
     {% for whisky in include.whiskys %}
       {% assign whisky_counter = whisky_counter | plus: 1 %}
@@ -35,7 +37,7 @@
 
 <p class="whisky-total" scope="row"><i>Total: {{ whisky_counter }} (owned: {{ whisky_counter_owned }})</i></p>
 
-<script>
+<script type="text/javascript">
   var options = {
     valueNames: [ 'name', 'rating', 'owned' ]
   };
