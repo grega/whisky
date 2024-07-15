@@ -19,6 +19,6 @@
       {% assign to_try_sorted = site.data[whisky_type].to_try | sort: 'name' %}
       {% include whiskys.html whiskys=to_try_sorted table_id=table_to_try_id table_to_try=true %}
     {% endif %}
-    {% include whisky_suggestion.html name=whisky_type %}
+    <!-- {% include whisky_suggestion.html name=whisky_type %} -->
   </div>
 </div>
