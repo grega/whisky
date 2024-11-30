@@ -70,10 +70,15 @@ title: Regions
         return [...toTry, ...tried];
       });
 
-      // search and render results
+      // search and render results in a list
       searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
       
+        if (query === '') {
+          resultsList.innerHTML = '';
+          return;
+        }
+
         // filter and sort results
         const filtered = whiskyList
           .filter(whisky => whisky.name.toLowerCase().includes(query))
@@ -83,10 +88,9 @@ title: Regions
       
             if (aExact && !bExact) return -1; // exact match first
             if (!aExact && bExact) return 1;
-            return a.name.localeCompare(b.name); // alphabetical order
+            return a.name.localeCompare(b.name); // then the rest in alphabetical order
           });
       
-        // clear and repopulate the results list
         resultsList.innerHTML = '';
         filtered.forEach(whisky => {
           const listItem = document.createElement('li');
