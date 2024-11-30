@@ -43,6 +43,22 @@ td {
 
 ul {
   list-style-type: none;
+  
+  &.search-results {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+
+    li a {
+      display: block;
+      padding: 0.3rem 0;
+    }
+  }
+}
+
+.highlight {
+  background-color: #fff9c4 !important;
+  transition: background-color 1s ease;
 }
 
 .hidden {

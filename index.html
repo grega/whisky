@@ -30,6 +30,12 @@ title: Regions
   </div>
 
   <div class="column is-5 is-offset-1">
+    <h3 class="title is-4 mt-5">Search:</h3>
+    <div class="content">
+      <input class="input" type="text" id="search" placeholder="Search whisky names...">
+      <ul class="search-results" id="results"></ul>
+    </div>
+    
     <h3 class="title is-4 mt-5">Rating definitions:</h3>
     <ul>
       <li class="mb-2"><b>0</b>: Not good, won't drink again</li>
@@ -48,4 +54,49 @@ title: Regions
   var whiskyList = new List('regions', options);
   
   whiskyList.sort('tried', { order: 'desc' });
+
+  // search functionality
+  const apiURL = 'api/whisky.json';
+
+  fetch(apiURL)
+    .then(response => response.json())
+    .then(data => {
+      const searchInput = document.getElementById('search');
+      const resultsList = document.getElementById('results');
+
+      const whiskyList = Object.entries(data).flatMap(([country, categories]) => {
+        const toTry = categories.to_try ? categories.to_try.map(whisky => ({ name: whisky.name, country })) : [];
+        const tried = categories.tried ? categories.tried.map(whisky => ({ name: whisky.name, country })) : [];
+        return [...toTry, ...tried];
+      });
+
+      // search and render results
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+      
+        // filter and sort results
+        const filtered = whiskyList
+          .filter(whisky => whisky.name.toLowerCase().includes(query))
+          .sort((a, b) => {
+            const aExact = a.name.toLowerCase() === query;
+            const bExact = b.name.toLowerCase() === query;
+      
+            if (aExact && !bExact) return -1; // exact match first
+            if (!aExact && bExact) return 1;
+            return a.name.localeCompare(b.name); // alphabetical order
+          });
+      
+        // clear and repopulate the results list
+        resultsList.innerHTML = '';
+        filtered.forEach(whisky => {
+          const listItem = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `/${whisky.country}/?whisky_name=${encodeURIComponent(whisky.name)}`;
+          link.textContent = whisky.name;
+          listItem.appendChild(link);
+          resultsList.appendChild(listItem);
+        });
+      });
+    })
+    .catch(error => console.error('Error fetching whisky data:', error));
 </script>
