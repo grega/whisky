@@ -106,7 +106,7 @@ title: Regions
             const match = whiskyName.slice(matchIndex, matchIndex + query.length);
             const afterMatch = whiskyName.slice(matchIndex + query.length);
 
-            link.innerHTML = `${beforeMatch}<span class="highlight">${match}</span>${afterMatch}`;
+            link.innerHTML = `${beforeMatch}<span class="highlight">${match}</span>${afterMatch} <span class="country">(${whisky.country})</span>`;
           } else {
             link.textContent = whiskyName;
           }

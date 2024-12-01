@@ -53,6 +53,11 @@ ul {
       display: block;
       padding: 0.3rem 0;
     }
+
+    .country {
+      text-transform: capitalize;
+      font-style: italic;
+    }
   }
 }
 
