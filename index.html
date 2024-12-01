@@ -78,25 +78,39 @@ title: Regions
           resultsList.innerHTML = '';
           return;
         }
-
-        // filter and sort results
-        const filtered = whiskyList
-          .filter(whisky => whisky.name.toLowerCase().includes(query))
-          .sort((a, b) => {
-            const aExact = a.name.toLowerCase() === query;
-            const bExact = b.name.toLowerCase() === query;
       
-            if (aExact && !bExact) return -1; // exact match first
-            if (!aExact && bExact) return 1;
-            return a.name.localeCompare(b.name); // then the rest in alphabetical order
-          });
+        const filtered = whiskyList.filter(whisky =>
+          whisky.name.toLowerCase().includes(query)
+        );
+      
+        const sorted = filtered.sort((a, b) => {
+          const aStartsWith = a.name.toLowerCase().startsWith(query);
+          const bStartsWith = b.name.toLowerCase().startsWith(query);
+      
+          if (aStartsWith && !bStartsWith) return -1; // prioritize matches at the beginning
+          if (!aStartsWith && bStartsWith) return 1;
+          return a.name.localeCompare(b.name); // alphabetical order
+        });
       
         resultsList.innerHTML = '';
-        filtered.forEach(whisky => {
+        sorted.forEach(whisky => {
           const listItem = document.createElement('li');
           const link = document.createElement('a');
           link.href = `/${whisky.country}/?whisky_name=${encodeURIComponent(whisky.name)}`;
-          link.textContent = whisky.name;
+          
+          // highlight the matching part
+          const whiskyName = whisky.name;
+          const matchIndex = whiskyName.toLowerCase().indexOf(query);
+          if (matchIndex !== -1) {
+            const beforeMatch = whiskyName.slice(0, matchIndex);
+            const match = whiskyName.slice(matchIndex, matchIndex + query.length);
+            const afterMatch = whiskyName.slice(matchIndex + query.length);
+
+            link.innerHTML = `${beforeMatch}<span class="highlight">${match}</span>${afterMatch}`;
+          } else {
+            link.textContent = whiskyName;
+          }
+
           listItem.appendChild(link);
           resultsList.appendChild(listItem);
         });
