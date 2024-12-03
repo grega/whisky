@@ -47,16 +47,29 @@ ul {
   &.search-results {
     list-style-type: none;
     margin: 0;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0;
 
     li a {
       display: block;
-      padding: 0.3rem 0;
+      position: relative;
+      padding: 0.3rem 5rem 0.3rem 0.75rem;
+
+      &:hover {
+        background-color: #fafafa;
+      }
     }
 
     .country {
+      background-color: #eee;
+      border-radius: 5px;
+      color: #000;
+      position: absolute;
+      top: 5px;
+      right: 0.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.02rem;
+      padding: .2rem .5rem;      
       text-transform: capitalize;
-      font-style: italic;
     }
   }
 }
