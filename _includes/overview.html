@@ -1,4 +1,4 @@
-{% assign whisky_type = include.name | downcase %}
+{% assign whisky_type = include.name | replace: " ", "-" | downcase %}
 
 {% capture table_tried_id %}{{ '_tried' | prepend: whisky_type }}{% endcapture%}
 {% capture table_to_try_id %}{{ '_to_try' | prepend: whisky_type }}{% endcapture%}

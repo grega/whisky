@@ -28,7 +28,7 @@
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-start">
         {% for region in site.data %}
-          {% assign region_name = region[0] | capitalize %}
+          {% assign region_name = region[0] | replace: "-", " " | capitalize %}
           <a class="navbar-item {% if page.title == region_name %}is-active{% endif %}" href="/{{ region[0] }}">{{ region_name }}</a>
         {% endfor %}
       </div>
