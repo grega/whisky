@@ -10,7 +10,6 @@
 - name: Hamiltons Lowland Single Malt
   owned: true
 - name: Glenfarclas 25 Year Old
-- name: Mackinlay's Shackleton Blended Malt
 - name: Arran 18
 - name: Arran Bodega Sherry Cask
 - name: Auchentoshan 18
@@ -20,4 +19,11 @@
   owned: true
 - name: Burnt Ends Blended Whisky
 - name: Burnt Bridges Blended Whisky
+  owned: true
 - name: Dalwhinnie Oloroso Cask Finish
+- name: Highland Park 12
+  owned: true
+- name: GlenAllachie 15
+  owned: true
+- name: Deanston 14 Organic
+  owned: true
