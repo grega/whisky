@@ -1,7 +1,18 @@
 - name: Yellow Spot
 - name: Knappogue Castle 12
+- name: Bushmills 10
+  owned: true
 - name: Bushmills 16
 - name: Bushmills 21
 - name: Redbreast 21
 - name: Feckin Irish Whiskey
 - name: Drumshanbo Single Pot Still
+- name: Green Spot Château Léoville Barton
+  owned: true
+- name: Glendalough Double Barrel
+  owned: true
+- name: Tullamore D.E.W. XO Caribbean Rum Cask Finish
+  owned: true
+- name: Method and Madness Single Pot Still
+- name: Roe & Co
+  owned: true
