@@ -20,7 +20,7 @@ title: Regions
         {% for region in site.data %}
         {% assign tried_counter = tried_counter | plus: region[1].tried.size %}
           <tr>
-            <td class="name pt-2 pb-2" scope="row"><a href="/{{ region[0] }}">{{ region[0] | capitalize }}</a></td>
+            <td class="name pt-2 pb-2" scope="row"><a href="/{{ region[0] }}">{{ region[0] | replace: "-", " " | capitalize }}</a></td>
             <td class="tried pt-2 pb-2" scope="row">{{ region[1].tried.size | default: 0 }}</td>
           </tr>
         {% endfor %}
