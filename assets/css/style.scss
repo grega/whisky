@@ -37,12 +37,25 @@ th.sort {
   cursor: pointer;
 }
 
+tr.totals {
+  font-weight: bold;
+}
+
 td {
   text-transform: capitalize;
   a {
     display: inline-block;
     width: 100%;
     height: 100%;
+  }
+}
+
+.table.has-sticky-header {
+  thead th {
+    background-color: #fff;
+    position: sticky;
+    top: -1px;
+    z-index: 10;
   }
 }
 
