@@ -28,6 +28,7 @@ title: Regions
             {% endfor %}
             {% assign mean_rating = total_rating | times: 1000 | divided_by: region[1].tried.size %}
             {% assign mean_rating = mean_rating | divided_by: 1000.0 %}
+            {% assign mean_rating = mean_rating | round: 1 %}
           {% else %}
             {% assign mean_rating = 0 %}
           {% endif %}
