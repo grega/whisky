@@ -61,16 +61,11 @@ td {
 
 .table.has-sticky-header {
   thead th {
+    padding: 1rem 0.5rem;
     background-color: #fff;
     position: sticky;
     top: -1px;
     z-index: 10;
-    border: none;
-    outline: 1px solid #dbdbdb;
-  }
-
-  tr.whisky-1 td {
-    border-top: none;
   }
 }
 
