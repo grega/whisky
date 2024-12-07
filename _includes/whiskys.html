@@ -34,22 +34,20 @@
     {% endfor %}
     {% if include.table_tried %}
       <tr class="unsortable tried totals">
-        <td class="name pt-2 pb-2" scope="row">Totals</td>
-        <td class="pt-2 pb-2" scope="row">{{ whisky_counter }}</td>
+        <td class="name pt-2 pb-2" scope="row">Total: {{ whisky_counter }}</td>
+        <td class="pt-2 pb-2" scope="row"></td>
         <td class="pt-2 pb-2" scope="row">{{ whisky_counter_owned }}</td>
         <td class="pt-2 pb-2" scope="row"></td>
       </tr>
     {% else %}
       <tr class="unsortable to_try totals">
-        <td class="name pt-2 pb-2" scope="row">Totals</td>
+        <td class="name pt-2 pb-2" scope="row">Total: {{ whisky_counter }}</td>
         <td class="pt-2 pb-2" scope="row">{{ whisky_counter_owned }}</td>
         <td class="pt-2 pb-2" scope="row"></td>
       </tr>
     {% endif %}
   </tbody>
 </table>
-
-<p class="whisky-total" scope="row"><i>Total: {{ whisky_counter }} (owned: {{ whisky_counter_owned }})</i></p>
 
 <script type="text/javascript">
   var options = {
