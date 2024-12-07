@@ -3,8 +3,6 @@ layout: default
 title: Regions
 ---
 
-{% assign tried_counter = 0 %}
-
 <div class="columns">
   <div class="column is-6">
     <h2 class="title is-2">Regions</h2>
@@ -12,25 +10,44 @@ title: Regions
       <thead>
         <tr>
           <th scope="col" class="sort" data-sort="name">Region <i class="fas fa-sort"></i></th>
-          <th scope="col" class="sort" data-sort="tried">Tried <i class="fas fa-sort"></i></th>
-          <th scope="col" class="sort" data-sort="to_try">To Try <i class="fas fa-sort"></i></th>
+          <th scope="col" class="sort has-text-centered" data-sort="tried">Tried <i class="fas fa-sort"></i></th>
+          <th scope="col" class="sort has-text-centered" data-sort="to_try">To Try <i class="fas fa-sort"></i></th>
+          <th scope="col" class="sort has-text-centered" data-sort="mean_rating">Mean Rating <i class="fas fa-sort"></i></th>
         </tr>
       </thead>
       
       <tbody class="list">
         {% for region in site.data %}
-        {% assign tried_counter = tried_counter | plus: region[1].tried.size %}
-        {% assign to_try_counter = to_try_counter | plus: region[1].to_try.size %}
+          {% assign tried_counter = tried_counter | plus: region[1].tried.size %}
+          {% assign to_try_counter = to_try_counter | plus: region[1].to_try.size %}
+          {% assign total_rating = 0 %}
+
+          {% if region[1].tried.size > 0 %}
+            {% for whisky in region[1].tried %}
+              {% assign total_rating = total_rating | plus: whisky.rating %}
+            {% endfor %}
+            {% assign mean_rating = total_rating | times: 1000 | divided_by: region[1].tried.size %}
+            {% assign mean_rating = mean_rating | divided_by: 1000.0 %}
+          {% else %}
+            {% assign mean_rating = 0 %}
+          {% endif %}
+
           <tr>
             <td class="name pt-2 pb-2" scope="row"><a href="/{{ region[0] }}">{{ region[0] | replace: "-", " " | capitalize }}</a></td>
-            <td class="tried pt-2 pb-2" scope="row">{{ region[1].tried.size | default: 0 }}</td>
-            <td class="to_try pt-2 pb-2" scope="row">{{ region[1].to_try.size | default: 0 }}</td>
+            <td class="tried pt-2 pb-2 has-text-centered" scope="row">{{ region[1].tried.size | default: 0 }}</td>
+            <td class="to_try pt-2 pb-2 has-text-centered" scope="row">{{ region[1].to_try.size | default: 0 }}</td>
+            {% if tried_counter > 0 %}
+              <td class="mean_rating pt-2 pb-2 has-text-centered" scope="row">{{ mean_rating }}</td>
+            {% else %}
+              <td class="mean_rating pt-2 pb-2 has-text-centered" scope="row">0</td>
+            {% endif %}
           </tr>
         {% endfor %}
           <tr class="unsortable totals">
-            <td class="name pt-2 pb-2" scope="row">Totals</td>
-            <td class="tried pt-2 pb-2" scope="row">{{ tried_counter }}</td>
-            <td class="to_try pt-2 pb-2" scope="row">{{ to_try_counter }}</td>
+            <td class="name pt-2 pb-2" scope="row">Totals:</td>
+            <td class="tried pt-2 pb-2 has-text-centered" scope="row">{{ tried_counter }}</td>
+            <td class="to_try pt-2 pb-2 has-text-centered" scope="row">{{ to_try_counter }}</td>
+            <td></td>
           </tr>
       </tbody>
     </table>

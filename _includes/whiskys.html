@@ -6,10 +6,10 @@
     <tr>
       <th scope="col" class="sort" data-sort="name">Name <i class="fas fa-sort"></i></th>
       {% if include.table_tried %}
-      <th scope="col" class="rating-title sort" data-sort="rating">Rating (0 to 3) <i class="fas fa-sort"></i></th>
+      <th scope="col" class="rating-title sort has-text-centered" data-sort="rating">Rating (0 to 3) <i class="fas fa-sort"></i></th>
       {% endif %}
-      <th scope="col" class="owned sort" data-sort="owned">Owned <i class="fas fa-sort"></i></th>
-      <th scope="col" class="Link">Link</th>
+      <th scope="col" class="owned sort has-text-centered" data-sort="owned">Owned <i class="fas fa-sort"></i></th>
+      <th scope="col" class="link has-text-centered">Link</th>
     </tr>
   </thead>
   
@@ -23,13 +23,13 @@
       <tr class="whisky-{{ whisky_counter }}">
         <td class="name pt-2 pb-2" scope="row">{{ whisky.name }}</td>
         {% if include.table_tried %}
-        <td class="rating pt-2 pb-2">{{ whisky.rating }}</td>
+        <td class="rating pt-2 pb-2 has-text-centered">{{ whisky.rating }}</td>
        	{% endif %}
-       	<td class="owned pt-2 pb-2">{{ whisky.owned | default: "no" | replace: "true", "yes" | replace: "false", "no" }}</td>
+       	<td class="owned pt-2 pb-2 has-text-centered">{{ whisky.owned | default: "no" | replace: "true", "yes" | replace: "false", "no" }}</td>
         {% if whisky.link %}
-        <td class="link pt-2 pb-2"><a href="{{ whisky.link }}">Link</a></td>
+        <td class="link pt-2 pb-2 has-text-centered"><a href="{{ whisky.link }}">Link</a></td>
         {% else %} 
-        <td class="link pt-2 pb-2"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
+        <td class="link pt-2 pb-2 has-text-centered"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
         {% endif %}
       </tr>
     {% endfor %}
@@ -40,14 +40,14 @@
     {% if include.table_tried %}
       <tr class="unsortable tried totals">
         <td class="name pt-2 pb-2" scope="row">Total: {{ whisky_counter }}</td>
-        <td class="pt-2 pb-2" scope="row">Mean: {{ mean_rating }}</td>
-        <td class="pt-2 pb-2" scope="row">Owned: {{ whisky_counter_owned }}</td>
+        <td class="pt-2 pb-2 has-text-centered" scope="row">Mean: {{ mean_rating }}</td>
+        <td class="pt-2 pb-2 has-text-centered" scope="row">Owned: {{ whisky_counter_owned }}</td>
         <td class="pt-2 pb-2" scope="row"></td>
       </tr>
     {% else %}
       <tr class="unsortable to_try totals">
         <td class="name pt-2 pb-2" scope="row">Total: {{ whisky_counter }}</td>
-        <td class="pt-2 pb-2" scope="row">Owned: {{ whisky_counter_owned }}</td>
+        <td class="pt-2 pb-2 has-text-centered" scope="row">Owned: {{ whisky_counter_owned }}</td>
         <td class="pt-2 pb-2" scope="row"></td>
       </tr>
     {% endif %}
