@@ -16,6 +16,7 @@
   <tbody class="list{% if include.table_tried %} tried{% else %} to_try{% endif %}">
     {% for whisky in include.whiskys %}
       {% assign whisky_counter = whisky_counter | plus: 1 %}
+      {% assign total_rating = total_rating | plus: whisky.rating %}
     {% if whisky.owned %}
       {% assign whisky_counter_owned = whisky_counter_owned | plus: 1 %}
     {% endif %}
@@ -32,17 +33,21 @@
         {% endif %}
       </tr>
     {% endfor %}
+
+    {% assign mean_rating = total_rating | times: 1000 | divided_by: whisky_counter %}
+    {% assign mean_rating = mean_rating | divided_by: 1000.0 %}
+
     {% if include.table_tried %}
       <tr class="unsortable tried totals">
         <td class="name pt-2 pb-2" scope="row">Total: {{ whisky_counter }}</td>
-        <td class="pt-2 pb-2" scope="row"></td>
-        <td class="pt-2 pb-2" scope="row">{{ whisky_counter_owned }}</td>
+        <td class="pt-2 pb-2" scope="row">Mean: {{ mean_rating }}</td>
+        <td class="pt-2 pb-2" scope="row">Owned: {{ whisky_counter_owned }}</td>
         <td class="pt-2 pb-2" scope="row"></td>
       </tr>
     {% else %}
       <tr class="unsortable to_try totals">
         <td class="name pt-2 pb-2" scope="row">Total: {{ whisky_counter }}</td>
-        <td class="pt-2 pb-2" scope="row">{{ whisky_counter_owned }}</td>
+        <td class="pt-2 pb-2" scope="row">Owned: {{ whisky_counter_owned }}</td>
         <td class="pt-2 pb-2" scope="row"></td>
       </tr>
     {% endif %}
