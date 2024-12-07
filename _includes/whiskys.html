@@ -1,7 +1,7 @@
 {% assign whisky_counter = 0 %}
 {% assign whisky_counter_owned = 0 %}
 
-<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="{{include.table_id}}">
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-sticky-header" id="{{include.table_id}}">
   <thead>
     <tr>
       <th scope="col" class="sort" data-sort="name">Name <i class="fas fa-sort"></i></th>
@@ -13,7 +13,7 @@
     </tr>
   </thead>
   
-  <tbody class="list">
+  <tbody class="list{% if include.table_tried %} tried{% else %} to_try{% endif %}">
     {% for whisky in include.whiskys %}
       {% assign whisky_counter = whisky_counter | plus: 1 %}
     {% if whisky.owned %}
@@ -32,6 +32,20 @@
         {% endif %}
       </tr>
     {% endfor %}
+    {% if include.table_tried %}
+      <tr class="unsortable tried totals">
+        <td class="name pt-2 pb-2" scope="row">Totals</td>
+        <td class="pt-2 pb-2" scope="row">{{ whisky_counter }}</td>
+        <td class="pt-2 pb-2" scope="row">{{ whisky_counter_owned }}</td>
+        <td class="pt-2 pb-2" scope="row"></td>
+      </tr>
+    {% else %}
+      <tr class="unsortable to_try totals">
+        <td class="name pt-2 pb-2" scope="row">Totals</td>
+        <td class="pt-2 pb-2" scope="row">{{ whisky_counter_owned }}</td>
+        <td class="pt-2 pb-2" scope="row"></td>
+      </tr>
+    {% endif %}
   </tbody>
 </table>
 
@@ -42,5 +56,11 @@
     valueNames: [ 'name', 'rating', 'owned' ]
   };
 
-  var whiskyList = new List('{{include.table_id}}', options);
+  {% if include.table_tried %}
+    var whiskyListTried = new List('{{include.table_id}}', options);
+    makeRowsUnsortable(whiskyListTried, '.list.tried', '.unsortable.tried');
+  {% else %}
+    var whiskyListToTry = new List('{{include.table_id}}', options);
+    makeRowsUnsortable(whiskyListToTry, '.list.to_try', '.unsortable.to_try');
+  {% endif %}
 </script>

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/assets/js/head.js"></script>
 </head>
 
 <body>
@@ -42,45 +43,6 @@
     </div>
   </section>
   
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-      $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-        });
-      });
-    });
-
-    // get query parameter value by name (e.g. ?whisky_name=Ardbeg) when searching
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-
-    // scroll to and highlight whisky row
-    function highlightWhiskyRow(whiskyName) {
-      const row = [...document.querySelectorAll('td.name')].find(td =>
-        td.textContent.trim() === whiskyName
-      );
-    
-      if (row) {
-        const tableRow = row.parentElement; // get the parent <tr>
-        tableRow.scrollIntoView({ behavior: 'smooth', block: 'center' }); // scroll to the row
-        tableRow.classList.add('highlight'); // add the highlight class to the <tr>
-        setTimeout(() => tableRow.classList.remove('highlight'), 3000);
-      }
-    }
-
-    // get whisky_name from query string and highlight the corresponding row
-    const whiskyName = getQueryParam('whisky_name');
-    if (whiskyName) {
-      highlightWhiskyRow(decodeURIComponent(whiskyName));
-    }
-  </script>
+  <script type="text/javascript" src="/assets/js/app.js"></script>
 </body>
-
 </html>

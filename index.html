@@ -8,25 +8,32 @@ title: Regions
 <div class="columns">
   <div class="column is-6">
     <h2 class="title is-2">Regions</h2>
-    <table class="table is-bordered is-striped is-narrow is-fullwidth" id="regions">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" id="regions">
       <thead>
         <tr>
           <th scope="col" class="sort" data-sort="name">Region <i class="fas fa-sort"></i></th>
           <th scope="col" class="sort" data-sort="tried">Tried <i class="fas fa-sort"></i></th>
+          <th scope="col" class="sort" data-sort="to_try">To Try <i class="fas fa-sort"></i></th>
         </tr>
       </thead>
       
       <tbody class="list">
         {% for region in site.data %}
         {% assign tried_counter = tried_counter | plus: region[1].tried.size %}
+        {% assign to_try_counter = to_try_counter | plus: region[1].to_try.size %}
           <tr>
             <td class="name pt-2 pb-2" scope="row"><a href="/{{ region[0] }}">{{ region[0] | replace: "-", " " | capitalize }}</a></td>
             <td class="tried pt-2 pb-2" scope="row">{{ region[1].tried.size | default: 0 }}</td>
+            <td class="to_try pt-2 pb-2" scope="row">{{ region[1].to_try.size | default: 0 }}</td>
           </tr>
         {% endfor %}
+          <tr class="unsortable totals">
+            <td class="name pt-2 pb-2" scope="row">Totals</td>
+            <td class="tried pt-2 pb-2" scope="row">{{ tried_counter }}</td>
+            <td class="to_try pt-2 pb-2" scope="row">{{ to_try_counter }}</td>
+          </tr>
       </tbody>
     </table>
-    <p class="whisky-total is-align-items-end" scope="row"><i>Total: {{ tried_counter }}</i></p>
   </div>
 
   <div class="column is-5 is-offset-1">
@@ -47,12 +54,15 @@ title: Regions
 </div>
 
 <script type="text/javascript">
+  // table sorting
   var options = {
-    valueNames: [ 'name', 'tried' ]
+    valueNames: [ 'name', 'tried', 'to_try' ]
   };
 
   var whiskyList = new List('regions', options);
   
+  makeRowsUnsortable(whiskyList);
+
   whiskyList.sort('tried', { order: 'desc' });
 
   // search functionality
