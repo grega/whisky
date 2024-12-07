@@ -1,6 +1,6 @@
 // table sorting
 let options = {
-valueNames: [ 'name', 'tried', 'to_try', 'mean_rating' ]
+  valueNames: [ 'name', 'tried', 'to_try', 'mean_rating' ]
 };
 
 let whiskyList = new List('regions', options);
@@ -8,6 +8,17 @@ let whiskyList = new List('regions', options);
 makeRowsUnsortable(whiskyList);
 
 whiskyList.sort('tried', { order: 'desc' });
+
+// show means column
+document.querySelector('.show-means').addEventListener('click', function (event) {
+  event.preventDefault();
+  const targetSelector = this.getAttribute('data-target');
+  const table = document.querySelector(targetSelector);
+  if (table) {
+    table.classList.add('show');
+  }
+  this.remove();
+});
 
 // search functionality
 const apiURL = 'api/whisky.json';

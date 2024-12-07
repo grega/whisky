@@ -6,7 +6,7 @@ title: Regions
 <div class="columns">
   <div class="column is-6">
     <h2 class="title is-2">Regions</h2>
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-sticky-header" id="regions">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-sticky-header regions" id="regions">
       <thead>
         <tr>
           <th scope="col" class="sort" data-sort="name">Region <i class="fas fa-sort"></i></th>
@@ -45,7 +45,9 @@ title: Regions
           </tr>
         {% endfor %}
           <tr class="unsortable totals">
-            <td class="name pt-2 pb-2" scope="row">Totals:</td>
+            <td class="name pt-2 pb-2" scope="row">Totals:<br />
+              <a class="show-means" data-target=".regions" href="#">(show mean ratings)</a>
+            </td>
             <td class="tried pt-2 pb-2 has-text-centered" scope="row">{{ tried_counter }}</td>
             <td class="to_try pt-2 pb-2 has-text-centered" scope="row">{{ to_try_counter }}</td>
             <td></td>

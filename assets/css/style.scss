@@ -73,6 +73,21 @@ td {
   }
 }
 
+table.regions td:nth-child(4), 
+table.regions th:nth-child(4) {
+  display: none;
+}
+
+table.regions.show td:nth-child(4), 
+table.regions.show th:nth-child(4) {
+  display: table-cell;
+}
+
+.show-means {
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
 ul.search-results {
   list-style-type: none;
   margin: 0;
