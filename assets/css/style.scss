@@ -29,6 +29,10 @@ tbody tr th {
   font-weight: normal;
 }
 
+tbody tr {
+  transition: background-color 1s ease;
+}
+
 th.rating-title, td.rating  {
   text-align: center;
 }
@@ -39,6 +43,11 @@ th.sort {
 
 tr.totals {
   font-weight: bold;
+  background-color: transparent !important;
+
+  td {
+    border: none;
+  }
 }
 
 td {
@@ -56,6 +65,12 @@ td {
     position: sticky;
     top: -1px;
     z-index: 10;
+    border: none;
+    outline: 1px solid #dbdbdb;
+  }
+
+  tr.whisky-1 td {
+    border-top: none;
   }
 }
 
@@ -93,8 +108,7 @@ ul {
 }
 
 .highlight {
-  background-color: #fff9c4 !important;
-  transition: background-color 1s ease;
+  background-color: #fff9c4;
 }
 
 .hidden {
