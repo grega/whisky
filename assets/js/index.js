@@ -1,9 +1,9 @@
 // table sorting
-var options = {
+let options = {
 valueNames: [ 'name', 'tried', 'to_try', 'mean_rating' ]
 };
 
-var whiskyList = new List('regions', options);
+let whiskyList = new List('regions', options);
 
 makeRowsUnsortable(whiskyList);
 
