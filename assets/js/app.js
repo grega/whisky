@@ -23,10 +23,11 @@ function highlightWhiskyRow(whiskyName) {
   );
 
   if (row) {
-    const tableRow = row.parentElement; // get the parent <tr>
-    tableRow.scrollIntoView({ behavior: 'smooth', block: 'center' }); // scroll to the row
-    tableRow.classList.add('highlight'); // add the highlight class to the <tr>
-    setTimeout(() => tableRow.classList.remove('highlight'), 3000);
+    // scroll to row and highlight it
+    const tableRow = row.parentElement;
+    tableRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    tableRow.classList.add('highlight');
+    // setTimeout(() => tableRow.classList.remove('highlight'), 3000);
   }
 }
 
