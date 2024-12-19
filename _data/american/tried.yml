@@ -11,7 +11,7 @@
 - name: Old Grand-Dad Bonded 100 Proof
   rating: 2
 
-- name: WhistlePig 10 Year Old
+- name: WhistlePig 10
   rating: 3
   owned: true
 
@@ -43,7 +43,7 @@
 - name: Jack Daniel's Single Barrel Rye
   rating: 3
 
-- name: Pikesville 6 Year Old 110 Proof Straight Rye
+- name: Pikesville 6 (110 Proof) Straight Rye
   rating: 2
 
 - name: Kentucky Peerless 3 (That Boutique-y Rye Company)
@@ -52,7 +52,7 @@
 - name: Sonoma Distilling Co. Cherrywood Rye
   rating: 3
 
-- name: WhistlePig 15 Year Old
+- name: WhistlePig 15
   rating: 2
   
 - name: Four Roses Small Batch
