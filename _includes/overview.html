@@ -3,6 +3,13 @@
 {% capture table_tried_id %}{{ '_tried' | prepend: whisky_type }}{% endcapture%}
 {% capture table_to_try_id %}{{ '_to_try' | prepend: whisky_type }}{% endcapture%}
 
+<script type="text/javascript">
+  // whisky table sorting
+  const whiskyListOptions = {
+    valueNames: [ 'name', 'rating', 'owned' ]
+  };
+</script>
+
 <h2 class="title is-2">{{ include.name }}</h2>
 <div class="columns">
   <div class="column is-6">

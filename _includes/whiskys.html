@@ -56,15 +56,13 @@
 </table>
 
 <script type="text/javascript">
-  let options = {
-    valueNames: [ 'name', 'rating', 'owned' ]
-  };
-
   {% if include.table_tried %}
-    let whiskyListTried = new List('{{include.table_id}}', options);
+    const whiskyListTried = new List('{{include.table_id}}', whiskyListOptions);
     makeRowsUnsortable(whiskyListTried, '.list.tried', '.unsortable.tried');
+    whiskyListTried.sort('name', { order: 'asc' });
   {% else %}
-    let whiskyListToTry = new List('{{include.table_id}}', options);
+    const whiskyListToTry = new List('{{include.table_id}}', whiskyListOptions);
     makeRowsUnsortable(whiskyListToTry, '.list.to_try', '.unsortable.to_try');
+    whiskyListToTry.sort('name', { order: 'asc' });
   {% endif %}
 </script>

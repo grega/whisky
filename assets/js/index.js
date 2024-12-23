@@ -1,13 +1,11 @@
-// table sorting
-let options = {
+// region table sorting
+const regionListOptions = {
   valueNames: [ 'name', 'tried', 'to_try', 'mean_rating' ]
 };
 
-let whiskyList = new List('regions', options);
-
-makeRowsUnsortable(whiskyList);
-
-whiskyList.sort('tried', { order: 'desc' });
+const regionList = new List('regions', regionListOptions);
+makeRowsUnsortable(regionList);
+regionList.sort('tried', { order: 'desc' });
 
 // show means column
 document.querySelector('.show-means').addEventListener('click', function (event) {
