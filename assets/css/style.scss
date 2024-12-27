@@ -25,6 +25,19 @@
   flex-wrap: wrap;
 }
 
+@media(max-width: 767px) {
+  .narrow-reverse-columns {
+    flex-direction: column-reverse;
+    display: flex;
+    padding-top: 0;
+
+    :nth-child(2).column {
+      padding-top: 0;
+      margin-top: -1.5em;
+    }
+  }
+}
+
 tbody tr th {
   font-weight: normal;
 }
