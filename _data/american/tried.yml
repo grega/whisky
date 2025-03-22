@@ -92,3 +92,8 @@
   
 - name: Michter's US*1 Small Batch Bourbon
   rating: 3
+
+- name: Old Overholt 10 Cask Strength Rye
+  rating: 3
+  owned: true
+  link: https://thebourbonculture.com/whiskey-reviews/old-overholt-10-year-old-cask-strength-rye-whiskey-review/
