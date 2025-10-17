@@ -29,7 +29,7 @@
         {% if whisky.link %}
         <td class="link pt-2 pb-2 has-text-centered"><a href="{{ whisky.link }}">Link</a></td>
         {% else %} 
-        <td class="link pt-2 pb-2 has-text-centered"><a href="https://www.masterofmalt.com/search/#search={{ whisky.name | url_encode }}">Link</a></td>
+        <td class="link pt-2 pb-2 has-text-centered"><a href="https://www.masterofmalt.com/search/?query={{ whisky.name | url_encode }}">Link</a></td>
         {% endif %}
       </tr>
     {% endfor %}
