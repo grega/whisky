@@ -1,0 +1,306 @@
+---
+layout: default
+title: Analytics
+---
+
+<div class="analytics">
+  <h2 class="title is-2">Analytics</h2>
+  
+  <div class="section">
+    <h3 class="title is-4">Overview statistics</h3>
+    <div class="columns is-multiline">
+      {% assign total_tried = 0 %}
+      {% assign total_to_try = 0 %}
+      {% assign total_owned = 0 %}
+      {% assign total_rating_sum = 0 %}
+      {% assign rated_whisky_count = 0 %}
+      
+      {% for region in site.data %}
+        {% assign total_tried = total_tried | plus: region[1].tried.size %}
+        {% assign total_to_try = total_to_try | plus: region[1].to_try.size %}
+        
+        {% for whisky in region[1].tried %}
+          {% if whisky.rating > 0 %}
+            {% assign total_rating_sum = total_rating_sum | plus: whisky.rating %}
+            {% assign rated_whisky_count = rated_whisky_count | plus: 1 %}
+          {% endif %}
+          {% if whisky.owned %}
+            {% assign total_owned = total_owned | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        
+        {% for whisky in region[1].to_try %}
+          {% if whisky.owned %}
+            {% assign total_owned = total_owned | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      
+      {% assign total_backlog = total_tried | plus: total_to_try %}
+      {% if total_backlog > 0 %}
+        {% assign completion_pct = total_tried | times: 100 | divided_by: total_backlog %}
+      {% else %}
+        {% assign completion_pct = 0 %}
+      {% endif %}
+      
+      {% if rated_whisky_count > 0 %}
+        {% assign avg_rating = total_rating_sum | times: 1000 | divided_by: rated_whisky_count | divided_by: 1000.0 | round: 1 %}
+      {% else %}
+        {% assign avg_rating = 0 %}
+      {% endif %}
+      
+      <div class="column is-6-mobile is-4-tablet is-3-desktop">
+        <div class="box has-background-light has-text-centered">
+          <p class="title is-2">{{ total_tried }}</p>
+          <p class="heading">Tried</p>
+        </div>
+      </div>
+      
+      <div class="column is-6-mobile is-4-tablet is-3-desktop">
+        <div class="box has-background-light has-text-centered">
+          <p class="title is-2">{{ total_to_try }}</p>
+          <p class="heading">To try</p>
+        </div>
+      </div>
+      
+      <div class="column is-6-mobile is-4-tablet is-3-desktop">
+        <div class="box has-background-light has-text-centered">
+          <p class="title is-2">{{ completion_pct }}%</p>
+          <p class="heading">Completion rate</p>
+        </div>
+      </div>
+      
+      <div class="column is-6-mobile is-4-tablet is-3-desktop">
+        <div class="box has-background-light has-text-centered">
+          <p class="title is-2">{{ avg_rating }}</p>
+          <p class="heading">Average rating</p>
+        </div>
+      </div>
+      
+      <div class="column is-6-mobile is-4-tablet is-3-desktop">
+        <div class="box has-background-light has-text-centered">
+          <p class="title is-2">{{ total_owned }}</p>
+          <p class="heading">Bottles owned</p>
+        </div>
+      </div>
+      
+      <div class="column is-6-mobile is-4-tablet is-3-desktop">
+        <div class="box has-background-light has-text-centered">
+          <p class="title is-2">{{ site.data | size }}</p>
+          <p class="heading">Regions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="title is-4">Regional progress</h3>
+    <div class="region-progress">
+      {% for region in site.data %}
+        {% assign region_name = region[0] | replace: "-", " " | capitalize %}
+        {% assign tried = region[1].tried.size | default: 0 %}
+        {% assign to_try = region[1].to_try.size | default: 0 %}
+        {% assign total = tried | plus: to_try %}
+        {% assign pct = tried | times: 100 | divided_by: total %}
+        
+        <div class="box">
+          <div class="level is-mobile">
+            <div class="level-left">
+              <a href="/{{ region[0] }}" class="is-capitalized has-text-weight-semibold">{{ region_name }}</a>
+            </div>
+            <div class="level-right">
+              <span class="is-size-7 has-text-grey">{{ tried }}/{{ total }} ({{ pct }}%)</span>
+            </div>
+          </div>
+          <progress class="progress is-small" value="{{ pct }}" max="100"></progress>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="title is-4">Bottles owned</h3>
+    <div class="columns">
+      {% assign owned_tried = 0 %}
+      {% assign owned_to_try = 0 %}
+      
+      {% for region in site.data %}
+        {% for whisky in region[1].tried %}
+          {% if whisky.owned %}
+            {% assign owned_tried = owned_tried | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {% for whisky in region[1].to_try %}
+          {% if whisky.owned %}
+            {% assign owned_to_try = owned_to_try | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      
+      <div class="column is-6">
+        <h4 class="title is-5">Owned & tried ({{ owned_tried }})</h4>
+        <table class="table is-narrow is-fullwidth">
+          <tbody>
+            {% for region in site.data %}
+              {% for whisky in region[1].tried %}
+                {% if whisky.owned %}
+                  <tr>
+                    <td>{{ whisky.name }}</td>
+                    <td class="has-text-right is-narrow">
+                      {% if whisky.rating > 0 %}
+                        <span class="tag is-light">{{ whisky.rating }} ⭐</span>
+                      {% else %}
+                        <span class="tag is-light">unrated</span>
+                      {% endif %}
+                    </td>
+                    <td class="has-text-right is-narrow is-size-7 has-text-grey">
+                      {{ region[0] | replace: "-", " " | capitalize }}
+                    </td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="column is-6">
+        <h4 class="title is-5">Owned & to try ({{ owned_to_try }})</h4>
+        <table class="table is-narrow is-fullwidth">
+          <tbody>
+            {% for region in site.data %}
+              {% for whisky in region[1].to_try %}
+                {% if whisky.owned %}
+                  <tr>
+                    <td>{{ whisky.name }}</td>
+                    <td class="has-text-right is-narrow is-size-7 has-text-grey">
+                      {{ region[0] | replace: "-", " " | capitalize }}
+                    </td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="title is-4">Highest rated</h3>
+    <div class="columns">
+      <div class="column is-6">
+        <h4 class="title is-5">3-star whiskies</h4>
+        <table class="table is-narrow is-fullwidth">
+          <tbody>
+            {% assign found_3 = false %}
+            {% for region in site.data %}
+              {% for whisky in region[1].tried %}
+                {% if whisky.rating == 3 %}
+                  {% assign found_3 = true %}
+                  <tr>
+                    <td>{{ whisky.name }}</td>
+                    <td class="has-text-right is-narrow is-size-7 has-text-grey">
+                      {{ region[0] | replace: "-", " " | capitalize }}
+                    </td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+            {% unless found_3 %}
+              <tr><td><em>None yet! Keep exploring...</em></td></tr>
+            {% endunless %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="title is-4">Region comparison</h3>
+    {% assign global_sum = 0 %}
+    {% assign global_count = 0 %}
+    {% for region in site.data %}
+      {% for whisky in region[1].tried %}
+        {% assign rating_val = whisky.rating | default: 0 %}
+        {% assign global_sum = global_sum | plus: rating_val %}
+        {% assign global_count = global_count | plus: 1 %}
+      {% endfor %}
+    {% endfor %}
+    {% if global_count > 0 %}
+      {% assign global_mean_x1000 = global_sum | times: 1000 | divided_by: global_count %}
+    {% else %}
+      {% assign global_mean_x1000 = 0 %}
+    {% endif %}
+    {% assign prior_weight = 10 %}
+    {% assign global_mean = global_mean_x1000 | divided_by: 1000.0 | round: 1 %}
+    <p class="is-size-7 has-text-grey mb-3">
+      Weighted average uses a Bayesian adjustment to compare regions fairly when tried counts differ:
+      ({{ prior_weight }} × global mean + region total) / ({{ prior_weight }} + tried).
+      Global mean: {{ global_mean }}; prior weight: {{ prior_weight }}.
+    </p>
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th>Region</th>
+          <th class="has-text-centered">Tried</th>
+          <th class="has-text-centered">To try</th>
+          <th class="has-text-centered">Total</th>
+          <th class="has-text-centered">Average rating</th>
+          <th class="has-text-centered">Weighted average</th>
+          <th class="has-text-centered">Owned</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for region in site.data %}
+          {% assign region_name = region[0] | replace: "-", " " | capitalize %}
+          {% assign tried = region[1].tried.size | default: 0 %}
+          {% assign to_try = region[1].to_try.size | default: 0 %}
+          {% assign total = tried | plus: to_try %}
+          
+          {% assign region_rating_sum = 0 %}
+          {% for whisky in region[1].tried %}
+            {% assign rating_value = whisky.rating | default: 0 %}
+            {% assign region_rating_sum = region_rating_sum | plus: rating_value %}
+          {% endfor %}
+          
+          {% assign region_owned = 0 %}
+          {% for whisky in region[1].tried %}
+            {% if whisky.owned %}
+              {% assign region_owned = region_owned | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% for whisky in region[1].to_try %}
+            {% if whisky.owned %}
+              {% assign region_owned = region_owned | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if tried > 0 %}
+            {% assign avg = region_rating_sum | times: 1000 | divided_by: tried | divided_by: 1000.0 | round: 1 %}
+            {%- comment -%} Weighted (Bayesian) average: (prior_weight * global_mean + sum) / (prior_weight + tried)
+              Compute in x1000 space safely: (prior_weight*global_mean_x1000) + (region_sum*1000) {%- endcomment -%}
+            {% assign weighted_prior_x1000 = prior_weight | times: global_mean_x1000 %}
+            {% assign region_sum_x1000 = region_rating_sum | times: 1000 %}
+            {% assign weighted_num_x1000 = weighted_prior_x1000 | plus: region_sum_x1000 %}
+            {% assign weighted_den = prior_weight | plus: tried %}
+            {% assign weighted_avg = weighted_num_x1000 | divided_by: weighted_den | divided_by: 1000.0 | round: 1 %}
+          {% else %}
+            {% assign avg = 0 %}
+            {% assign weighted_avg = 0 %}
+          {% endif %}
+          
+          <tr>
+            <td><a href="/{{ region[0] }}">{{ region_name }}</a></td>
+            <td class="has-text-centered">{{ tried }}</td>
+            <td class="has-text-centered">{{ to_try }}</td>
+            <td class="has-text-centered"><strong>{{ total }}</strong></td>
+            <td class="has-text-centered">{{ avg }}</td>
+            <td class="has-text-centered">{{ weighted_avg }}</td>
+            <td class="has-text-centered">{{ region_owned }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
