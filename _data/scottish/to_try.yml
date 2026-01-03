@@ -5,8 +5,6 @@
 - name: Aberlour A'bunadh
 - name: The Ileach Peaty
   owned: true
-- name: Glencadam 10
-  owned: true
 - name: Hamiltons Lowland Single Malt
   owned: true
 - name: Glenfarclas 25
